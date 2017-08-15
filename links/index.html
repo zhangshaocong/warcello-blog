@@ -15,14 +15,15 @@
   <!-- 强制页面在当前窗口以独立页面显示,防止别人在框架里调用页面 -->
   <meta http-equiv="window-target" content="_top" />
   
-  <title>归档: 2017/8 | Warcello</title>
+  <title>友情链接 | Warcello</title>
   <meta property="og:type" content="website">
-<meta property="og:title" content="Warcello博客">
-<meta property="og:url" content="http://blog.warcello.cn/archives/2017/08/index.html">
+<meta property="og:title" content="Links">
+<meta property="og:url" content="http://blog.warcello.cn/links/index.html">
 <meta property="og:site_name" content="Warcello博客">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2017-08-15T00:51:33.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Warcello博客">
+<meta name="twitter:title" content="Links">
   
     <link rel="alternate" href="/atom.xml" title="Warcello博客" type="application/atom+xml">
   
@@ -32,6 +33,8 @@
   <!-- font-awesome CSS -->
   <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
   
+  <link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+  
   <link rel="stylesheet" href="/css/style.css">
      
        
@@ -40,7 +43,7 @@
 </head>
 
 
-<body class="main-center">
+<body class="main-center no-sidebar">
   <section class="mainside">
   <div class="slimContent">
     <div class="navbar-header">
@@ -335,100 +338,27 @@
 </section>
 
   
-  
-<section class="main">
-  	<article class="content article article-archives article-type-list" itemscope="">
-	    <header class="article-header">
-	      <h1 itemprop="title">归档: 2017/8</h1>
-	      <p class="text-muted">共 6 篇文章</p>
-	    </header>
-	    <div class="article-body">
-	      
-  
-  
-    
-    
+  <section class="main">
+  <article class="article article-links article-type-list" itemscope="">
+  <header class="article-header">
+    <h1 itemprop="title">友情链接</h1>
+    <p class="text-muted">
+      欢迎交换链接，可在当前页面留言
+    </p>
+  </header>
+  <div class="article-body">
+    <div class="row">
       
-      
-      <section class="panel panel-default b-no">
-        <div class="panel-heading" role="tab">
-          <h3 class="panel-title">
-            <a data-toggle="collapse" href="#collapse2017" aria-expanded="true">
-              <i class="fa fa-calendar-plus-o text-active"></i><i class="fa fa-calendar-minus-o text"></i>
-              2017
-            </a>
-            <!-- <a href="/archives/2017" class="archive-year">2017</a> -->
-          </h3>
-        </div>
-        <div id="collapse2017" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="heading2017">
-        <div class="panel-body">
-          <div class="collection">
-    
-    
-<a href="/2017/08/07/webpackimage/" class="collection-item" target="_blank" itemprop="url">
-  <time datetime="2017-08-07T01:13:28.000Z" itemprop="datePublished">2017-08-07</time>
-  <span>&nbsp;&nbsp;&nbsp;</span> 12.Webpack img-loader
-</a>
-
+    </div>
+  </div>
+</article>
 
   
-    
-    
-    
-<a href="/2017/08/06/Manifests/" class="collection-item" target="_blank" itemprop="url">
-  <time datetime="2017-08-06T01:10:22.000Z" itemprop="datePublished">2017-08-06</time>
-  <span>&nbsp;&nbsp;&nbsp;</span> 11.Webpack Manifests
-</a>
+  <div id="comments"></div>
 
 
-  
-    
-    
-    
-<a href="/2017/08/04/cleanplugin/" class="collection-item" target="_blank" itemprop="url">
-  <time datetime="2017-08-04T01:11:23.000Z" itemprop="datePublished">2017-08-04</time>
-  <span>&nbsp;&nbsp;&nbsp;</span> 10.clean-webpack-plugin
-</a>
 
 
-  
-    
-    
-    
-<a href="/2017/08/03/PurifyCSS/" class="collection-item" target="_blank" itemprop="url">
-  <time datetime="2017-08-03T01:10:09.000Z" itemprop="datePublished">2017-08-03</time>
-  <span>&nbsp;&nbsp;&nbsp;</span> 9.Webpack Plugs PurifyCSS
-</a>
-
-
-  
-    
-    
-    
-<a href="/2017/08/02/loader/" class="collection-item" target="_blank" itemprop="url">
-  <time datetime="2017-08-02T01:08:49.000Z" itemprop="datePublished">2017-08-02</time>
-  <span>&nbsp;&nbsp;&nbsp;</span> 8.Webpack Loader之css-loader,row-loader,file-loader
-</a>
-
-
-  
-    
-    
-    
-<a href="/2017/08/01/ExtractTextWebpackPlugin/" class="collection-item" target="_blank" itemprop="url">
-  <time datetime="2017-08-01T01:07:45.000Z" itemprop="datePublished">2017-08-01</time>
-  <span>&nbsp;&nbsp;&nbsp;</span> 7.Webpack插件ExtractTextWebpackPlugin
-</a>
-
-
-  
-  
-    </div></div></div></section>
-  
-
-	    </div>
-  	</article>
-  	 	
 </section>
 
   <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
@@ -457,6 +387,30 @@ window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
 })(window);
 </script>
 <script src="/js/insight.js"></script>
+
+
+  <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+var gitment = new Gitment({
+  // id默认为当前页面url，如果url后带参数或锚点，gitment要重新初始化
+  // https://github.com/imsun/gitment/issues/55
+  // 解决方案：id:window.location.pathname,或者将id设置为当前页面标题
+  id: 'Links', 
+  owner: '', // 可以是你的GitHub用户名，也可以是github id
+  repo: '',
+  oauth: {
+    client_id: '',
+    client_secret: '',
+  }
+})
+gitment.render('comments')
+</script>
+
+
+
+  
+<script defer src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
 
 
 

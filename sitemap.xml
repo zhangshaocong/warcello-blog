@@ -2,9 +2,121 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://blog.warcello.cn/2017/08/15/hello-world/</loc>
+    <loc>http://blog.warcello.cn/2017/08/07/webpackimage/</loc>
     
-    <lastmod>2017-08-15T00:19:47.000Z</lastmod>
+    <lastmod>2017-08-15T01:14:14.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://blog.warcello.cn/2017/08/04/cleanplugin/</loc>
+    
+    <lastmod>2017-08-15T01:13:05.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://blog.warcello.cn/2017/08/06/Manifests/</loc>
+    
+    <lastmod>2017-08-15T01:12:55.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://blog.warcello.cn/2017/08/03/PurifyCSS/</loc>
+    
+    <lastmod>2017-08-15T01:11:00.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://blog.warcello.cn/2017/08/02/loader/</loc>
+    
+    <lastmod>2017-08-15T01:10:42.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://blog.warcello.cn/2017/08/01/ExtractTextWebpackPlugin/</loc>
+    
+    <lastmod>2017-08-15T01:09:38.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://blog.warcello.cn/2017/07/29/webpacksassloader/</loc>
+    
+    <lastmod>2017-08-15T01:05:58.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://blog.warcello.cn/2017/07/28/webpackplugs/</loc>
+    
+    <lastmod>2017-08-15T01:05:24.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://blog.warcello.cn/2017/07/27/webpackloader/</loc>
+    
+    <lastmod>2017-08-15T01:03:53.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://blog.warcello.cn/2017/07/26/webpackConfig/</loc>
+    
+    <lastmod>2017-08-15T01:02:30.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://blog.warcello.cn/2017/07/24/Webpackage/</loc>
+    
+    <lastmod>2017-08-15T01:00:47.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://blog.warcello.cn/2017/07/25/sayHello/</loc>
+    
+    <lastmod>2017-08-15T01:00:38.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://blog.warcello.cn/links/index.html</loc>
+    
+    <lastmod>2017-08-15T00:51:33.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://blog.warcello.cn/tags/index.html</loc>
+    
+    <lastmod>2017-08-15T00:51:07.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://blog.warcello.cn/repository/index.html</loc>
+    
+    <lastmod>2017-08-15T00:50:58.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://blog.warcello.cn/categories/index.html</loc>
+    
+    <lastmod>2017-08-15T00:49:39.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://blog.warcello.cn/about/index.html</loc>
+    
+    <lastmod>2017-08-15T00:48:31.000Z</lastmod>
     
   </url>
   

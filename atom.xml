@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://blog.warcello.cn/"/>
-  <updated>2017-08-15T00:19:47.000Z</updated>
+  <updated>2017-08-15T01:14:14.000Z</updated>
   <id>http://blog.warcello.cn/</id>
   
   <author>
@@ -16,29 +16,381 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>Hello World</title>
-    <link href="http://blog.warcello.cn/2017/08/15/hello-world/"/>
-    <id>http://blog.warcello.cn/2017/08/15/hello-world/</id>
-    <published>2017-08-15T00:19:47.000Z</published>
-    <updated>2017-08-15T00:19:47.000Z</updated>
+    <title>12.Webpack img-loader</title>
+    <link href="http://blog.warcello.cn/2017/08/07/webpackimage/"/>
+    <id>http://blog.warcello.cn/2017/08/07/webpackimage/</id>
+    <published>2017-08-07T01:13:28.000Z</published>
+    <updated>2017-08-15T01:14:14.000Z</updated>
     
-    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+    <content type="html"><![CDATA[<p> 图片压缩</p>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ npm install img-loader --save-dev</div></pre></td></tr></table></figure>
+<h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">module: &#123;</div><div class="line">  rules: [</div><div class="line">    &#123;</div><div class="line">      test: /\.(jpe?g|png|gif|svg)$/i,</div><div class="line">      use: [</div><div class="line">        &apos;url-loader?limit=10000&apos;,</div><div class="line">        &apos;img-loader&apos;</div><div class="line">      ]</div><div class="line">    &#125;</div><div class="line">  ]</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 ]]></content>
     
     <summary type="html">
     
-      &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.
+      &lt;p&gt; 图片压缩&lt;/p&gt;
+&lt;h2 id=&quot;安装&quot;&gt;&lt;a href=&quot;#安装&quot; class=&quot;headerlink&quot; title=&quot;安装&quot;&gt;&lt;/a&gt;安装&lt;/h2&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter
     
     </summary>
     
+      <category term="Webpack,前端" scheme="http://blog.warcello.cn/categories/Webpack-%E5%89%8D%E7%AB%AF/"/>
+    
+    
+      <category term="Webpack" scheme="http://blog.warcello.cn/tags/Webpack/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>11.Webpack Manifests</title>
+    <link href="http://blog.warcello.cn/2017/08/06/Manifests/"/>
+    <id>http://blog.warcello.cn/2017/08/06/Manifests/</id>
+    <published>2017-08-06T01:10:22.000Z</published>
+    <updated>2017-08-15T01:12:55.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>我们可以成功地将（我们）捆绑的版块（hash）版本（哈希），但现在我们有一个新问题：如果文件哈希不断变化，我们如何在HTML中引用它？我们不能再硬编码路径了。而是让webpack生成一个manifest.json文件。这样，使用Ruby，PHP或者填空，我们可以读取这个文件并动态地确定并获取正确的哈希。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">			<span class="keyword">this</span>.plugin(<span class="string">'done'</span>,stats =&gt; &#123;</div><div class="line">				<span class="built_in">require</span>(<span class="string">'fs'</span>).writeFileSync(</div><div class="line">					path.join(__dirname,<span class="string">'dist/manifest.json'</span>),</div><div class="line">					<span class="built_in">JSON</span>.stringify(stats.toJson().assetsByChunkName)</div><div class="line">					)</div><div class="line">			&#125;)</div><div class="line">		&#125;</div></pre></td></tr></table></figure>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;我们可以成功地将（我们）捆绑的版块（hash）版本（哈希），但现在我们有一个新问题：如果文件哈希不断变化，我们如何在HTML中引用它？我们不能再硬编码路径了。而是让webpack生成一个manifest.json文件。这样，使用Ruby，PHP或者填空，我们可以读取这个文件
+    
+    </summary>
+    
+      <category term="Webpack,前端" scheme="http://blog.warcello.cn/categories/Webpack-%E5%89%8D%E7%AB%AF/"/>
+    
+    
+      <category term="Webpack" scheme="http://blog.warcello.cn/tags/Webpack/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>10.clean-webpack-plugin</title>
+    <link href="http://blog.warcello.cn/2017/08/04/cleanplugin/"/>
+    <id>http://blog.warcello.cn/2017/08/04/cleanplugin/</id>
+    <published>2017-08-04T01:11:23.000Z</published>
+    <updated>2017-08-15T01:13:05.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>一个webpack插件，在构建之前删除你的构建文件夹</p>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm i clean-webpack-plugin --save-dev</div></pre></td></tr></table></figure>
+<h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> CleanWebpackPlugin = <span class="built_in">require</span>(<span class="string">'clean-webpack-plugin'</span>); <span class="comment">//使用</span></div><div class="line"><span class="keyword">const</span> HtmlWebpackPlugin = <span class="built_in">require</span>(<span class="string">'html-webpack-plugin'</span>); <span class="comment">//installed via npm</span></div><div class="line"><span class="keyword">const</span> webpack = <span class="built_in">require</span>(<span class="string">'webpack'</span>); <span class="comment">//to access built-in plugins</span></div><div class="line"><span class="keyword">const</span> path = <span class="built_in">require</span>(<span class="string">'path'</span>);</div><div class="line"></div><div class="line"><span class="comment">//使用</span></div><div class="line"><span class="keyword">let</span> pathsToClean = [</div><div class="line">  <span class="string">'dist'</span>,</div><div class="line">  <span class="string">'build'</span></div><div class="line">]</div><div class="line"></div><div class="line"><span class="comment">//使用</span></div><div class="line"><span class="keyword">let</span> cleanOptions = &#123;</div><div class="line">  root:     <span class="string">'/full/webpack/root/path'</span>,</div><div class="line">  exclude:  [<span class="string">'shared.js'</span>],</div><div class="line">  verbose:  <span class="literal">true</span>,</div><div class="line">  dry:      <span class="literal">false</span></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">// sample WebPack config</span></div><div class="line"><span class="keyword">const</span> webpackConfig = &#123;</div><div class="line">  entry: <span class="string">'./path/to/my/entry/file.js'</span>,</div><div class="line">  output: &#123;</div><div class="line">    filename: <span class="string">'my-first-webpack.bundle.js'</span>,</div><div class="line">    path: path.resolve(__dirname, <span class="string">'dist'</span>)</div><div class="line">  &#125;,</div><div class="line">  <span class="built_in">module</span>: &#123;</div><div class="line">    rules: [</div><div class="line">      &#123;</div><div class="line">        test: <span class="regexp">/\.(js|jsx)$/</span>,</div><div class="line">        loader: <span class="string">'babel-loader'</span></div><div class="line">      &#125;</div><div class="line">    ]</div><div class="line">  &#125;,</div><div class="line">  plugins: [</div><div class="line">    <span class="keyword">new</span> CleanWebpackPlugin(pathsToClean, cleanOptions),<span class="comment">//使用</span></div><div class="line">    <span class="keyword">new</span> webpack.optimize.UglifyJsPlugin(), </div><div class="line">    <span class="keyword">new</span> HtmlWebpackPlugin(&#123;<span class="attr">template</span>: <span class="string">'./src/index.html'</span>&#125;)</div><div class="line">  ]</div><div class="line">&#125;</div><div class="line">Paths</div></pre></td></tr></table></figure>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;一个webpack插件，在构建之前删除你的构建文件夹&lt;/p&gt;
+&lt;h2 id=&quot;安装&quot;&gt;&lt;a href=&quot;#安装&quot; class=&quot;headerlink&quot; title=&quot;安装&quot;&gt;&lt;/a&gt;安装&lt;/h2&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;
+    
+    </summary>
+    
+      <category term="Webpack,前端" scheme="http://blog.warcello.cn/categories/Webpack-%E5%89%8D%E7%AB%AF/"/>
+    
+    
+      <category term="Webpack" scheme="http://blog.warcello.cn/tags/Webpack/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>9.Webpack Plugs PurifyCSS</title>
+    <link href="http://blog.warcello.cn/2017/08/03/PurifyCSS/"/>
+    <id>http://blog.warcello.cn/2017/08/03/PurifyCSS/</id>
+    <published>2017-08-03T01:10:09.000Z</published>
+    <updated>2017-08-15T01:11:00.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>此插件使用PurifyCSS从CSS中删除未使用的选择器,应该配合extract-text-webpack-plugin使用</p>
+<p>没有任何CSS文件作为资产发布，这个插件什么都不做。您还可以使用文件插件将CSS文件放入输出文件夹，但强烈建议您使用Extract Text插件的PurifyCSS插件。</p>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm i -D purifycss-webpack purify-css</div></pre></td></tr></table></figure>
+<h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> path = <span class="built_in">require</span>(<span class="string">'path'</span>);</div><div class="line"><span class="keyword">const</span> glob = <span class="built_in">require</span>(<span class="string">'glob'</span>);</div><div class="line"><span class="keyword">const</span> ExtractTextPlugin = <span class="built_in">require</span>(<span class="string">'extract-text-webpack-plugin'</span>);</div><div class="line"><span class="keyword">const</span> PurifyCSSPlugin = <span class="built_in">require</span>(<span class="string">'purifycss-webpack'</span>);</div><div class="line"></div><div class="line"><span class="built_in">module</span>.exports = &#123;</div><div class="line">  entry: &#123;...&#125;,</div><div class="line">  output: &#123;...&#125;,</div><div class="line">  <span class="built_in">module</span>: &#123;</div><div class="line">    rules: [</div><div class="line">      &#123;</div><div class="line">        test: <span class="regexp">/\.css$/</span>,</div><div class="line">        loader: ExtractTextPlugin.extract(&#123;</div><div class="line">          fallbackLoader: <span class="string">'style-loader'</span>,</div><div class="line">          loader: <span class="string">'css-loader'</span></div><div class="line">        &#125;)</div><div class="line">      &#125;</div><div class="line">    ]</div><div class="line">  &#125;,</div><div class="line">  plugins: [</div><div class="line">    <span class="keyword">new</span> ExtractTextPlugin(<span class="string">'[name].[contenthash].css'</span>),</div><div class="line">    <span class="comment">// Make sure this is after ExtractTextPlugin!</span></div><div class="line">    <span class="keyword">new</span> PurifyCSSPlugin(&#123;</div><div class="line">      <span class="comment">// Give paths to parse for rules. These should be absolute!</span></div><div class="line">      paths: glob.sync(path.join(__dirname, <span class="string">'app/*.html'</span>)),</div><div class="line">      minimize:<span class="literal">true</span>,<span class="comment">//代码压缩</span></div><div class="line">    &#125;)</div><div class="line">  ]</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;此插件使用PurifyCSS从CSS中删除未使用的选择器,应该配合extract-text-webpack-plugin使用&lt;/p&gt;
+&lt;p&gt;没有任何CSS文件作为资产发布，这个插件什么都不做。您还可以使用文件插件将CSS文件放入输出文件夹，但强烈建议您使用Extract T
+    
+    </summary>
+    
+      <category term="Webpack,前端" scheme="http://blog.warcello.cn/categories/Webpack-%E5%89%8D%E7%AB%AF/"/>
+    
+    
+      <category term="Webpack" scheme="http://blog.warcello.cn/tags/Webpack/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>8.Webpack Loader之css-loader,row-loader,file-loader</title>
+    <link href="http://blog.warcello.cn/2017/08/02/loader/"/>
+    <id>http://blog.warcello.cn/2017/08/02/loader/</id>
+    <published>2017-08-02T01:08:49.000Z</published>
+    <updated>2017-08-15T01:10:42.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>今天讲讲图片url如何通过webpack编译的</p>
+<p>1.css-loader的中禁用url处理</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">	test:<span class="regexp">/\.s[ac]ss$/</span>,</div><div class="line">	use:ExtractTextPlugin.extract(&#123;</div><div class="line">		</div><div class="line">		use:[</div><div class="line">			&#123;</div><div class="line">				loader:<span class="string">'css-loader'</span>,</div><div class="line">				options:&#123; <span class="attr">url</span>:<span class="literal">false</span> &#125;,</div><div class="line">			&#125;,</div><div class="line">		],</div><div class="line">		fallback:<span class="string">'style-loader'</span>,</div><div class="line">		&#125;),</div><div class="line">&#125;,</div></pre></td></tr></table></figure>
+<p>这样在运行后webpack就不会对url中的内容进行处理</p>
+<p>2.row-loader</p>
+<p> 安装</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install --save-dev raw-loader</div></pre></td></tr></table></figure>
+<p>使用</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">   test: /\.png|jpg|gif$/,</div><div class="line">   use: &apos;raw-loader&apos;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>这样就会在dist目录下生成一张.png的图片</p>
+<p>3.file-load 生成文件</p>
+<p>安装</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install --save-dev file-loader</div></pre></td></tr></table></figure>
+<p>使用</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">	test: /\.(png|jpg|gif)$/,</div><div class="line">	loader: &apos;file-loader&apos;,</div><div class="line">	options: &#123;</div><div class="line">		name: &apos;images/[name].[hash].[ext]&apos;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">&#125;,</div></pre></td></tr></table></figure>
+<p>这里说一下options里的name就是指生成的文件名，hash指生成带hash的文件名，ext指文件后缀</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;今天讲讲图片url如何通过webpack编译的&lt;/p&gt;
+&lt;p&gt;1.css-loader的中禁用url处理&lt;/p&gt;
+&lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line
+    
+    </summary>
+    
+      <category term="Webpack,前端" scheme="http://blog.warcello.cn/categories/Webpack-%E5%89%8D%E7%AB%AF/"/>
+    
+    
+      <category term="Webpack" scheme="http://blog.warcello.cn/tags/Webpack/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>7.Webpack插件ExtractTextWebpackPlugin</title>
+    <link href="http://blog.warcello.cn/2017/08/01/ExtractTextWebpackPlugin/"/>
+    <id>http://blog.warcello.cn/2017/08/01/ExtractTextWebpackPlugin/</id>
+    <published>2017-08-01T01:07:45.000Z</published>
+    <updated>2017-08-15T01:09:38.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>它会将所有的入口 chunk(entry chunks)中引用的 *.css，移动到独立分离的 CSS 文件。因此，你的样式将不再内嵌到 JS bundle 中，而是会放到一个单独的 CSS 文件（即 styles.css）当中。 如果你的样式文件大小较大，这会做更快提前加载，因为 CSS bundle 会跟 JS bundle 并行加载。</p>
+<h2 id="1-安装"><a href="#1-安装" class="headerlink" title="1.安装"></a>1.安装</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"># 对于 webpack 3</div><div class="line">npm install --save-dev extract-text-webpack-plugin</div></pre></td></tr></table></figure>
+<h2 id="2-用法"><a href="#2-用法" class="headerlink" title="2.用法"></a>2.用法</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//webpack.config.js头部引入</span></div><div class="line"><span class="keyword">var</span> ExtractTextPlugin = <span class="built_in">require</span>(<span class="string">"extract-text-webpack-plugin"</span>);</div><div class="line"></div><div class="line"><span class="built_in">module</span>.exports = &#123;</div><div class="line">  <span class="built_in">module</span>: &#123;</div><div class="line">    rules: [</div><div class="line">      &#123;</div><div class="line">        test: <span class="regexp">/\.css$/</span>,</div><div class="line">        use: ExtractTextPlugin.extract(&#123;</div><div class="line">          fallback: <span class="string">"style-loader"</span>,</div><div class="line">          use: <span class="string">"css-loader"</span></div><div class="line">        &#125;)</div><div class="line">      &#125;</div><div class="line">    ]</div><div class="line">  &#125;,</div><div class="line">  plugins: [</div><div class="line">    <span class="keyword">new</span> ExtractTextPlugin(<span class="string">"styles.css"</span>),</div><div class="line">  ]</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="3-修改文件名"><a href="#3-修改文件名" class="headerlink" title="3.修改文件名"></a>3.修改文件名</h2><p><code>filename</code> 参数可以是 <code>Function</code>。它通过 <code>getPath</code> 来处理格式，如 <code>css/[name].css</code>，并返回真实的文件名，你可以用 <code>css</code> 替换 <code>css/js</code>，你会得到新的路径 <code>css/a.css</code>。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line">entry: &#123;</div><div class="line">		app:[</div><div class="line">			<span class="string">'./src/main.js'</span>,</div><div class="line">			<span class="string">'./src/main.scss'</span>,</div><div class="line">		]</div><div class="line"></div><div class="line">	&#125;,</div><div class="line">	output: &#123;</div><div class="line">		path:  path.resolve(__dirname,<span class="string">'./dist'</span>),</div><div class="line">		filename: <span class="string">'[name].js'</span></div><div class="line">	&#125;,</div><div class="line">	<span class="built_in">module</span>:&#123;</div><div class="line">		rules:[</div><div class="line">			&#123;</div><div class="line">				test:<span class="regexp">/\.s[ac]ss$/</span>,</div><div class="line">				use:ExtractTextPlugin.extract(&#123;</div><div class="line">					use:[<span class="string">'css-loader'</span>,<span class="string">'sass-loader'</span>],</div><div class="line">					fallback:<span class="string">'style-loader'</span>,</div><div class="line">					&#125;),</div><div class="line">			&#125;,</div><div class="line">		]</div><div class="line">	&#125;,</div><div class="line">	plugins: [</div><div class="line">		<span class="keyword">new</span> ExtractTextPlugin(<span class="string">'[name].css'</span>),</div><div class="line">		</div><div class="line">	]</div><div class="line">	</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+<h2 id="4-LoaderOptionsPlugin"><a href="#4-LoaderOptionsPlugin" class="headerlink" title="4.LoaderOptionsPlugin"></a>4.LoaderOptionsPlugin</h2><p>loader-options-plugin 和其他插件不同，它用于将 webpack 1 迁移至 webpack 2。在 webpack 2 中，对 webpack.config.js 的结构要求变得更加严格；不再开放扩展给其他的 loader/插件。webpack 2 推荐的使用方式是直接传递 options 给 loader/插件（换句话说，配置选项将不是全局/共享的）。</p>
+<p>不过，在某个 loader 升级为依靠直接传递给它的配置选项运行之前，可以使用 loader-options-plugin 来抹平差异。你可以通过这个插件配置全局/共享的 loader 配置，使所有的 loader 都能收到这些配置。</p>
+<p>简单说就是格式转化转换成webpack能适配的代码格式（目前只是自己的理解）</p>
+<p>用法直接在<code>plugins</code>数组中加入</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">new</span> webpack.LoaderOptionsPlugin(&#123;</div><div class="line">      minimize: <span class="literal">true</span>,</div><div class="line">    &#125;)</div></pre></td></tr></table></figure>
+<h2 id="5-本节webpack-config-js源代码如下"><a href="#5-本节webpack-config-js源代码如下" class="headerlink" title="5.本节webpack.config.js源代码如下"></a>5.本节<code>webpack.config.js</code>源代码如下</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> webpack = <span class="built_in">require</span>(<span class="string">'webpack'</span>);</div><div class="line"><span class="keyword">var</span> path = <span class="built_in">require</span>(<span class="string">'path'</span>);</div><div class="line"><span class="keyword">var</span> ExtractTextPlugin = <span class="built_in">require</span>(<span class="string">"extract-text-webpack-plugin"</span>);</div><div class="line"><span class="keyword">var</span> inProduction = (process.env.NODE_ENV == <span class="string">'production'</span>);</div><div class="line"></div><div class="line"><span class="built_in">module</span>.exports = &#123;</div><div class="line">	entry: &#123;</div><div class="line">		app:[</div><div class="line">			<span class="string">'./src/main.js'</span>,</div><div class="line">			<span class="string">'./src/main.scss'</span></div><div class="line">		]</div><div class="line"></div><div class="line">	&#125;,</div><div class="line">	output: &#123;</div><div class="line">		path:  path.resolve(__dirname,<span class="string">'./dist'</span>),</div><div class="line">		filename: <span class="string">'[name].js'</span></div><div class="line">	&#125;,</div><div class="line">	<span class="built_in">module</span>:&#123;</div><div class="line">		rules:[</div><div class="line">			&#123;</div><div class="line">				test:<span class="regexp">/\.s[ac]ss$/</span>,</div><div class="line">				use:ExtractTextPlugin.extract(&#123;</div><div class="line">					use:[<span class="string">'css-loader'</span>,<span class="string">'sass-loader'</span>],</div><div class="line">					fallback:<span class="string">'style-loader'</span>,</div><div class="line">					&#125;),</div><div class="line">			&#125;,</div><div class="line">		]</div><div class="line">	&#125;,</div><div class="line">	plugins: [</div><div class="line">		<span class="keyword">new</span> ExtractTextPlugin(<span class="string">'[name].css'</span>),</div><div class="line">		<span class="keyword">new</span> webpack.LoaderOptionsPlugin(&#123;</div><div class="line">			  minimize: inProduction,</div><div class="line">			&#125;)</div><div class="line">	]</div><div class="line">	</div><div class="line">&#125;;</div><div class="line"><span class="keyword">if</span> (inProduction) </div><div class="line">&#123;</div><div class="line">	<span class="built_in">module</span>.exports.plugins.push(</div><div class="line">		<span class="keyword">new</span> webpack.optimize.UglifyJsPlugin()</div><div class="line">		);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="6-最后"><a href="#6-最后" class="headerlink" title="6.最后"></a>6.最后</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">npm run dev //代码未压缩</div><div class="line">npm run production  //代码已压缩</div></pre></td></tr></table></figure>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;它会将所有的入口 chunk(entry chunks)中引用的 *.css，移动到独立分离的 CSS 文件。因此，你的样式将不再内嵌到 JS bundle 中，而是会放到一个单独的 CSS 文件（即 styles.css）当中。 如果你的样式文件大小较大，这会做更快提前加
+    
+    </summary>
+    
+      <category term="Webpack,前端" scheme="http://blog.warcello.cn/categories/Webpack-%E5%89%8D%E7%AB%AF/"/>
+    
+    
+      <category term="Webpack" scheme="http://blog.warcello.cn/tags/Webpack/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>6.Webpack插件之sass-loader</title>
+    <link href="http://blog.warcello.cn/2017/07/29/webpacksassloader/"/>
+    <id>http://blog.warcello.cn/2017/07/29/webpacksassloader/</id>
+    <published>2017-07-29T01:05:14.000Z</published>
+    <updated>2017-08-15T01:05:58.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>1.安装</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install sass-loader node-sass webpack --save-dev</div></pre></td></tr></table></figure>
+<p>2.使用<br>在<code>webpack.config.js</code>中加入如下代码</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">	test:<span class="regexp">/\.s[ac]ss$/</span>,</div><div class="line">	use:[<span class="string">'style-loader'</span>,<span class="string">'css-loader'</span>,<span class="string">'sass-loader'</span>]</div><div class="line">&#125;,</div></pre></td></tr></table></figure>
+<p>创建<code>main.scss</code>文件</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">$primary:green;</div><div class="line"></div><div class="line"><span class="selector-tag">body</span> &#123;</div><div class="line">	<span class="attribute">background</span>:$primary;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>修改<code>main.js</code>将<code>main.scss</code>引入进去</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">require</span>(<span class="string">'./main.scss'</span>);</div></pre></td></tr></table></figure>
+<p>运行<code>npm run dev</code>查看效果</p>
+<p><a href="https://doc.webpack-china.org/loaders/sass-loader" target="_blank" rel="external">点击查看sass-loader原文文档</a></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;1.安装&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;di
+    
+    </summary>
+    
+      <category term="Webpack,前端" scheme="http://blog.warcello.cn/categories/Webpack-%E5%89%8D%E7%AB%AF/"/>
+    
+    
+      <category term="Webpack" scheme="http://blog.warcello.cn/tags/Webpack/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>5.Webpack 插件</title>
+    <link href="http://blog.warcello.cn/2017/07/28/webpackplugs/"/>
+    <id>http://blog.warcello.cn/2017/07/28/webpackplugs/</id>
+    <published>2017-07-28T01:04:15.000Z</published>
+    <updated>2017-08-15T01:05:24.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>插件可以完成更多 loader 不能完成的功能。</p>
+<p>插件的使用一般是在 webpack 的配置信息 plugins 选项中指定。</p>
+<p>接下来我们演示一下代码压缩这个插件</p>
+<h2 id="1-修改webpack-config-js-添加plugins"><a href="#1-修改webpack-config-js-添加plugins" class="headerlink" title="1.修改webpack.config.js,添加plugins:"></a>1.修改<code>webpack.config.js</code>,添加plugins:</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">plugins: [</div><div class="line"></div><div class="line">		<span class="keyword">new</span> webpack.optimize.UglifyJsPlugin()</div><div class="line">		</div><div class="line">	]</div></pre></td></tr></table></figure>
+<p>然后运行<code>npm run build</code>查看效果</p>
+<h2 id="2-这么运行之后发现代码压缩成一行了，不利于查看，现在我们把这个改一下，让他在开发环境压缩代码，在本地环境不进行压缩"><a href="#2-这么运行之后发现代码压缩成一行了，不利于查看，现在我们把这个改一下，让他在开发环境压缩代码，在本地环境不进行压缩" class="headerlink" title="2.这么运行之后发现代码压缩成一行了，不利于查看，现在我们把这个改一下，让他在开发环境压缩代码，在本地环境不进行压缩"></a>2.这么运行之后发现代码压缩成一行了，不利于查看，现在我们把这个改一下，让他在开发环境压缩代码，在本地环境不进行压缩</h2><p>修改<code>webpackage.config.js</code></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> webpack = <span class="built_in">require</span>(<span class="string">'webpack'</span>);</div><div class="line"><span class="keyword">var</span> path = <span class="built_in">require</span>(<span class="string">'path'</span>);</div><div class="line"></div><div class="line"><span class="built_in">module</span>.exports = &#123;</div><div class="line">	entry: <span class="string">'./src/main.js'</span>,</div><div class="line">	output: &#123;</div><div class="line">		path:  path.resolve(__dirname,<span class="string">'./dist'</span>),</div><div class="line">		filename: <span class="string">'bundle.js'</span></div><div class="line">	&#125;,</div><div class="line">	<span class="built_in">module</span>:&#123;</div><div class="line">		rules:[</div><div class="line">			&#123;</div><div class="line">				test:<span class="regexp">/\.css$/</span>,</div><div class="line">				use:[<span class="string">'style-loader'</span>,<span class="string">'css-loader'</span>]</div><div class="line">			&#125;</div><div class="line">		]</div><div class="line">	&#125;,</div><div class="line">	plugins: [</div><div class="line">		</div><div class="line">	]</div><div class="line">	</div><div class="line">&#125;;</div><div class="line"><span class="keyword">if</span> (process.env.NODE_ENV == <span class="string">'production'</span>) </div><div class="line">&#123;</div><div class="line">	<span class="built_in">module</span>.exports.plugins.push(</div><div class="line">		<span class="keyword">new</span> webpack.optimize.UglifyJsPlugin()</div><div class="line">		);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>修改<code>package.json</code></p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">"scripts": &#123;</div><div class="line">    "dev": "webpack",</div><div class="line">    "production": "NODE_ENV=production webpack",</div><div class="line">    "watch": "npm run build --watch"</div><div class="line">  &#125;,</div></pre></td></tr></table></figure>
+<p>最后我们可以分别运行<code>npm run dev</code>,<code>npm run production</code>查看生成的js</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;插件可以完成更多 loader 不能完成的功能。&lt;/p&gt;
+&lt;p&gt;插件的使用一般是在 webpack 的配置信息 plugins 选项中指定。&lt;/p&gt;
+&lt;p&gt;接下来我们演示一下代码压缩这个插件&lt;/p&gt;
+&lt;h2 id=&quot;1-修改webpack-config-js-添加plugi
+    
+    </summary>
+    
+      <category term="Webpack,前端" scheme="http://blog.warcello.cn/categories/Webpack-%E5%89%8D%E7%AB%AF/"/>
+    
+    
+      <category term="Webpack" scheme="http://blog.warcello.cn/tags/Webpack/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>4.Webpack loader带代码转换</title>
+    <link href="http://blog.warcello.cn/2017/07/27/webpackloader/"/>
+    <id>http://blog.warcello.cn/2017/07/27/webpackloader/</id>
+    <published>2017-07-27T01:03:00.000Z</published>
+    <updated>2017-08-15T01:03:53.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>loader 用于对模块的源代码进行转换。loader 可以使你在 import 或”加载”模块时预处理文件。因此，loader 类似于其他构建工具中“任务(task)”，并提供了处理前端构建步骤的强大方法。loader 可以将文件从不同的语言（如 TypeScript）转换为 JavaScript，或将内联图像转换为 data URL。loader 甚至允许你直接在 JavaScript 模块中 import CSS文件！</p>
+<h2 id="创建css文件"><a href="#创建css文件" class="headerlink" title="创建css文件"></a>创建css文件</h2><p>我们在src文件夹下创建一个main.css文件</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">body</span> &#123;</div><div class="line">    <span class="attribute">background</span>:yellow;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="安装loader插件"><a href="#安装loader插件" class="headerlink" title="安装loader插件"></a>安装loader插件</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install css-loader style-loader --save-dev</div></pre></td></tr></table></figure>
+<h2 id="修改webpack-config-js"><a href="#修改webpack-config-js" class="headerlink" title="修改webpack.config.js"></a>修改webpack.config.js</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">module</span>:&#123;</div><div class="line">    rules:[</div><div class="line">        &#123;</div><div class="line">            test:<span class="regexp">/\.css$/</span>,</div><div class="line">            use:[<span class="string">'style-loader'</span>,<span class="string">'css-loader'</span>]</div><div class="line">        &#125;</div><div class="line">    ]</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="运行npm-rum-build后查看浏览器效果"><a href="#运行npm-rum-build后查看浏览器效果" class="headerlink" title="运行npm rum build后查看浏览器效果"></a>运行<code>npm rum build</code>后查看浏览器效果</h2><h2 id="内联"><a href="#内联" class="headerlink" title="内联"></a>内联</h2><p>可以在 import 语句或任何等效于 “import” 的方式中指定 loader。使用 ! 将资源中的 loader 分开。分开的每个部分都相对于当前目录解析。通过前置所有规则及使用 !，可以对应覆盖到配置中的任意 loader。<br>尽可能使用 module.rules，因为这样可以减少源码中的代码量，并且可以在出错时，更快地调试和定位 loader 中的问题。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> Styles <span class="keyword">from</span> <span class="string">'style-loader!css-loader?modules!./styles.css'</span>;</div></pre></td></tr></table></figure>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;loader 用于对模块的源代码进行转换。loader 可以使你在 import 或”加载”模块时预处理文件。因此，loader 类似于其他构建工具中“任务(task)”，并提供了处理前端构建步骤的强大方法。loader 可以将文件从不同的语言（如 TypeScript）转
+    
+    </summary>
+    
+      <category term="Webpack,前端" scheme="http://blog.warcello.cn/categories/Webpack-%E5%89%8D%E7%AB%AF/"/>
+    
+    
+      <category term="Webpack" scheme="http://blog.warcello.cn/tags/Webpack/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>3.Webpack 配置文件</title>
+    <link href="http://blog.warcello.cn/2017/07/26/webpackConfig/"/>
+    <id>http://blog.warcello.cn/2017/07/26/webpackConfig/</id>
+    <published>2017-07-26T01:01:41.000Z</published>
+    <updated>2017-08-15T01:02:30.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>根据文档描述，webpack在执行的时候，除了在命令行传递参数，还可以通过制定参数执行。默认情况下，会搜索当前目录的webpack.config.js文件。这个文件是一个 node.js 模块，返回一个 json 格式的配置信息对象，或者通过 –config 选项来指定配置文件</p>
+<h2 id="创建webpack-config-js"><a href="#创建webpack-config-js" class="headerlink" title="创建webpack.config.js"></a>创建webpack.config.js</h2><p>继续我们的项目，在根目录下创建webpack.config.js文件并加入一下内容</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> webpack = <span class="built_in">require</span>(<span class="string">'webpack'</span>);</div><div class="line"></div><div class="line"><span class="built_in">module</span>.exports = &#123;</div><div class="line">	entry: <span class="string">'./src/main.js'</span>,</div><div class="line">	output: &#123;</div><div class="line">		path: __dirname+<span class="string">'/dist'</span>,</div><div class="line">		filename: <span class="string">'bundle.js'</span></div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>打开命令行运行 <code>webpack</code> 并查看效果<br>这里需要注意一下路径问题，output中的path必须是绝对路径不能使用相对路径否则会报错</p>
+<h2 id="修改package-js"><a href="#修改package-js" class="headerlink" title="修改package.js"></a>修改package.js</h2><p>继续修改package.js将scripts换成如下</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="string">"scripts"</span>: &#123;</div><div class="line">    <span class="string">"build"</span>: <span class="string">"webpack"</span>,</div><div class="line">    <span class="string">"watch"</span>: <span class="string">"npm run build --watch"</span></div><div class="line">  &#125;,</div></pre></td></tr></table></figure>
+<p>运行<code>webpack</code>查看效果</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;根据文档描述，webpack在执行的时候，除了在命令行传递参数，还可以通过制定参数执行。默认情况下，会搜索当前目录的webpack.config.js文件。这个文件是一个 node.js 模块，返回一个 json 格式的配置信息对象，或者通过 –config 选项来指定配置
+    
+    </summary>
+    
+      <category term="Webpack,前端" scheme="http://blog.warcello.cn/categories/Webpack-%E5%89%8D%E7%AB%AF/"/>
+    
+    
+      <category term="Webpack" scheme="http://blog.warcello.cn/tags/Webpack/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>2.Webpack Hello World</title>
+    <link href="http://blog.warcello.cn/2017/07/25/sayHello/"/>
+    <id>http://blog.warcello.cn/2017/07/25/sayHello/</id>
+    <published>2017-07-25T01:58:13.000Z</published>
+    <updated>2017-08-15T01:00:38.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="创建项目"><a href="#创建项目" class="headerlink" title="创建项目"></a>创建项目</h2><p>1.初始化项目</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">mkdir learn-webpack</div><div class="line">cd learn-webpack</div><div class="line">npm init -y</div></pre></td></tr></table></figure>
+<p>此时项目底下将有一个package.json文件   </p>
+<p>2.npm安装webpack</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">//此命令是全局安装 </div><div class="line">npm install webpack -g</div></pre></td></tr></table></figure>
+<p>此时 Webpack 已经安装到了全局环境下，可以通过命令行 webpack -h 试试。</p>
+<p>通常我们会将 Webpack 安装到项目的依赖中，这样就可以使用项目本地版本的 Webpack</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install webpack --save-dev</div></pre></td></tr></table></figure>
+<p>3.创建main.js文件并对改文件进行打包</p>
+<p>main.js</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">alert(<span class="string">"hello world"</span>)</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">//全局安装使用这个方法打包</div><div class="line">webpack src/main.js dist/bundle.js</div><div class="line"></div><div class="line">//本地项目打包使用</div><div class="line">node_modules/.bin/webpack src/main.js dist/bundle.js</div></pre></td></tr></table></figure>
+<p>4.创建index.html文件并将bundle.js引入</p>
+<p>index.html   </p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">title</span>&gt;</span><span class="tag">&lt;/<span class="name">title</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>Hello Wold!<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"dist/bundle.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>5.打开浏览器查看效果   </p>
+<p>6.修改main的js后发现alert不对重新打包后恢复正常，总不能每次修改都重新编译吧，当然不会，webpack提供我们一个观察者模式。   </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">//全局安装使用这个方法打包</div><div class="line">webpack src/main.js dist/bundle.js --watch</div><div class="line"></div><div class="line">//本地项目打包使用</div><div class="line">node_modules/.bin/webpack src/main.js dist/bundle.js --watch</div></pre></td></tr></table></figure>
+<p>此时再对文章修改之后就不用再打包了<br>我们在将这些命令优化一下，打开package.js<br>在script数组中修改如下</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&quot;scripts&quot;: &#123;</div><div class="line">    &quot;build&quot;: &quot;webpack src/main.js dist/bundle.js&quot;,</div><div class="line">    &quot;watch&quot;: &quot;npm run build --watch&quot;</div><div class="line">  &#125;,</div></pre></td></tr></table></figure>
+<p>打开命令行工具运行<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm run watch</div></pre></td></tr></table></figure></p>
+<p>此效果跟直接运行<code>webpack src/main.js dist/bundle.js --watch</code>一致</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;创建项目&quot;&gt;&lt;a href=&quot;#创建项目&quot; class=&quot;headerlink&quot; title=&quot;创建项目&quot;&gt;&lt;/a&gt;创建项目&lt;/h2&gt;&lt;p&gt;1.初始化项目&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td cla
+    
+    </summary>
+    
+      <category term="Webpack,前端" scheme="http://blog.warcello.cn/categories/Webpack-%E5%89%8D%E7%AB%AF/"/>
+    
+    
+      <category term="Webpack" scheme="http://blog.warcello.cn/tags/Webpack/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>1.webpack 简介</title>
+    <link href="http://blog.warcello.cn/2017/07/24/Webpackage/"/>
+    <id>http://blog.warcello.cn/2017/07/24/Webpackage/</id>
+    <published>2017-07-24T00:55:38.000Z</published>
+    <updated>2017-08-15T01:00:47.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="什么是webpack"><a href="#什么是webpack" class="headerlink" title="什么是webpack"></a>什么是webpack</h2><p> Webpack 是一个模块打包器。它将根据模块的依赖关系进行静态分析，然后将这些模块按照指定的规则生成对应的静态资源    </p>
+<h2 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h2><blockquote>
+<p>Webpack 和其他模块化工具有什么区别呢？</p>
+<h3 id="代码拆分"><a href="#代码拆分" class="headerlink" title="代码拆分"></a>代码拆分</h3><p>Webpack 有两种组织模块依赖的方式，同步和异步。异步依赖作为分割点，形成一个新的块。在优化了依赖树后，每一个异步区块都作为一个文件被打包</p>
+<h3 id="Loader"><a href="#Loader" class="headerlink" title="Loader"></a>Loader</h3><p>Webpack 本身只能处理原生的 JavaScript 模块，但是 loader 转换器可以将各种类型的资源转换成 JavaScript 模块。这样，任何资源都可以成为 Webpack 可以处理的模块。</p>
+<h3 id="智能解析"><a href="#智能解析" class="headerlink" title="智能解析"></a>智能解析</h3><p>Webpack 有一个智能解析器，几乎可以处理任何第三方库，无论它们的模块形式是 CommonJS、 AMD 还是普通的 JS 文件。甚至在加载依赖的时候，允许使用动态表达式 require(“./templates/“ + name + “.jade”)</p>
+<h3 id="插件系统"><a href="#插件系统" class="headerlink" title="插件系统"></a>插件系统</h3><p>Webpack 还有一个功能丰富的插件系统。大多数内容功能都是基于这个插件系统运行的，还可以开发和使用开源的 Webpack 插件，来满足各式各样的需求。</p>
+<h3 id="快速运行"><a href="#快速运行" class="headerlink" title="快速运行"></a>快速运行</h3><p>Webpack 使用异步 I/O 和多级缓存提高运行效率，这使得 Webpack 能够以令人难以置信的速度快速增量编译</p>
+</blockquote>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;什么是webpack&quot;&gt;&lt;a href=&quot;#什么是webpack&quot; class=&quot;headerlink&quot; title=&quot;什么是webpack&quot;&gt;&lt;/a&gt;什么是webpack&lt;/h2&gt;&lt;p&gt; Webpack 是一个模块打包器。它将根据模块的依赖关系进行静态分析，然后
+    
+    </summary>
+    
+      <category term="Webpack,前端" scheme="http://blog.warcello.cn/categories/Webpack-%E5%89%8D%E7%AB%AF/"/>
+    
+    
+      <category term="Webpack" scheme="http://blog.warcello.cn/tags/Webpack/"/>
     
   </entry>
   

@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang=zh>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="Cache-Control" content="no-transform" />
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="format-detection" content="telephone=no,email=no,adress=no">
+  <!-- Color theme for statusbar -->
+  <meta name="theme-color" content="#000000" />
+  <!-- 强制页面在当前窗口以独立页面显示,防止别人在框架里调用页面 -->
+  <meta http-equiv="window-target" content="_top" />
+  
+  <title>7.Webpack插件ExtractTextWebpackPlugin | Warcello</title>
+  <meta name="description" content="它会将所有的入口 chunk(entry chunks)中引用的 *.css，移动到独立分离的 CSS 文件。因此，你的样式将不再内嵌到 JS bundle 中，而是会放到一个单独的 CSS 文件（即 styles.css）当中。 如果你的样式文件大小较大，这会做更快提前加载，因为 CSS bundle 会跟 JS bundle 并行加载。 1.安装12# 对于 webpack 3npm inst">
+<meta name="keywords" content="Webpack">
+<meta property="og:type" content="article">
+<meta property="og:title" content="7.Webpack插件ExtractTextWebpackPlugin">
+<meta property="og:url" content="http://blog.warcello.cn/2017/08/01/ExtractTextWebpackPlugin/index.html">
+<meta property="og:site_name" content="Warcello博客">
+<meta property="og:description" content="它会将所有的入口 chunk(entry chunks)中引用的 *.css，移动到独立分离的 CSS 文件。因此，你的样式将不再内嵌到 JS bundle 中，而是会放到一个单独的 CSS 文件（即 styles.css）当中。 如果你的样式文件大小较大，这会做更快提前加载，因为 CSS bundle 会跟 JS bundle 并行加载。 1.安装12# 对于 webpack 3npm inst">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2017-08-15T01:09:38.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="7.Webpack插件ExtractTextWebpackPlugin">
+<meta name="twitter:description" content="它会将所有的入口 chunk(entry chunks)中引用的 *.css，移动到独立分离的 CSS 文件。因此，你的样式将不再内嵌到 JS bundle 中，而是会放到一个单独的 CSS 文件（即 styles.css）当中。 如果你的样式文件大小较大，这会做更快提前加载，因为 CSS bundle 会跟 JS bundle 并行加载。 1.安装12# 对于 webpack 3npm inst">
+  
+    <link rel="alternate" href="/atom.xml" title="Warcello博客" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png" type="image/x-icon">
+  
+  <!-- font-awesome CSS -->
+  <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  
+  <link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+     
+       
+
+
+</head>
+
+
+<body class="main-center">
+  <section class="mainside">
+  <div class="slimContent">
+    <div class="navbar-header">
+      
+      
+      <div class="profile-block text-center">
+        <a id="avatar" href="https://github.com/zhangshaocong" target="_blank">
+          <img class="thumb-xl img-circle img-rotate" src="/images/avatar.png" width="200" height="200">
+        </a>
+        <h2 id="name" class="hidden-xs hidden-sm">Warcello</h2>
+        <h3 id="title" class="hidden-xs hidden-sm hidden-md">PHP工程师 &amp; 全栈开发</h3>
+        <small id="location" class="text-muted hidden-xs hidden-sm"><i class="fa fa-map-marker"></i> 北京, 朝阳</small>
+      </div>
+      
+      <div class="search" id="search-form-wrap">
+
+    <form class="search-form sidebar-form">
+        <div class="input-group">
+            <input type="text" class="search-form-input form-control" placeholder="搜索" />
+            <span class="input-group-btn">
+                <button type="submit" class="search-form-submit btn btn-flat"><i class="fa fa-search"></i></button>
+            </span>
+        </div>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="想要查找什么..." x-webkit-speech />
+            <button type="button" class="close ins-close ins-selectable" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+            <!-- <span class="ins-close ins-selectable"><i class="fa fa-times"></i></span> -->
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+
+</div>
+      <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <nav id="main-navbar" class="collapse navbar-collapse">
+      <ul class="nav navbar-nav main-nav">
+        
+        
+        <li class="menu-item menu-item-home">
+          <a href="/">
+            
+            <i class="fa fa-fw fa-dashboard"></i>
+            
+            <span class="menu-title">首页</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives">
+            
+            <i class="fa fa-fw fa-delicious"></i>
+            
+            <span class="menu-title">归档</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories">
+            
+            <i class="fa fa-fw fa-folder"></i>
+            
+            <span class="menu-title">分类</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags">
+            
+            <i class="fa fa-fw fa-tags"></i>
+            
+            <span class="menu-title">标签</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-repository">
+          <a href="/repository">
+            
+            <i class="fa fa-fw fa-code"></i>
+            
+            <span class="menu-title">项目</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-links">
+          <a href="/links">
+            
+            <i class="fa fa-fw fa-gg"></i>
+            
+            <span class="menu-title">友链</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about">
+            
+            <i class="fa fa-fw fa-coffee"></i>
+            
+            <span class="menu-title">关于</span>
+          </a>
+        </li>
+        
+      </ul>
+      <div class="footer">
+	
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://github.com/zhangshaocong" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="fa fa-github"></i></a></li>
+        
+        <li><a href="https://github.com/zhangshaocong" target="_blank" title="Behance" data-toggle=tooltip data-placement=top><i class="fa fa-behance"></i></a></li>
+        
+        <li><a href="/atom.xml" target="_blank" title="Rss" data-toggle=tooltip data-placement=top><i class="fa fa-rss"></i></a></li>
+        
+    </ul>
+    
+    <div class="copyright">
+        &copy; 2017 Warcello
+        <div class="publishby">
+        	<!-- Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. -->
+        	Theme by <a href="https://github.com/cofess" target="_blank"> cofess </a>base on <a href="https://github.com/cofess/hexo-theme-pure" target="_blank">pure</a>.
+        </div>
+    </div>
+</div>
+    </nav>
+  </div>
+</section>
+
+  
+    <section class="sidebar">
+  <div class="slimContent">
+    
+      <div class="widget">
+    <h3 class="widget-title">公告</h3>
+    <div class="widget-body">
+        <div id="board">
+            
+            <p>您好，您是第<span id="busuanzi_value_site_uv">0</span>位访客</p>
+            
+            <div class="content">
+                <p>欢迎交流与分享经验!</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget-body">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Webpack-前端/">Webpack,前端</a><span class="category-list-count">12</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget-body">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Webpack/">Webpack</a><span class="tag-list-count">12</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget-body tagcloud">
+      <a href="/tags/Webpack/" style="font-size: 13px;">Webpack</a>
+    </div>
+  </div>
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget-body">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">八月 2017</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">七月 2017</a><span class="archive-list-count">6</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget-body">
+      <ul class="recent-post-list list-unstyled no-thumbnail">
+        
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/Webpack-前端/">Webpack,前端</a>
+              </p>
+              <p class="item-title">
+                <a href="/2017/08/07/webpackimage/" class="title">12.Webpack img-loader</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2017-08-07T01:13:28.000Z" itemprop="datePublished">2017-08-07</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/Webpack-前端/">Webpack,前端</a>
+              </p>
+              <p class="item-title">
+                <a href="/2017/08/06/Manifests/" class="title">11.Webpack Manifests</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2017-08-06T01:10:22.000Z" itemprop="datePublished">2017-08-06</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/Webpack-前端/">Webpack,前端</a>
+              </p>
+              <p class="item-title">
+                <a href="/2017/08/04/cleanplugin/" class="title">10.clean-webpack-plugin</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2017-08-04T01:11:23.000Z" itemprop="datePublished">2017-08-04</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/Webpack-前端/">Webpack,前端</a>
+              </p>
+              <p class="item-title">
+                <a href="/2017/08/03/PurifyCSS/" class="title">9.Webpack Plugs PurifyCSS</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2017-08-03T01:10:09.000Z" itemprop="datePublished">2017-08-03</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/Webpack-前端/">Webpack,前端</a>
+              </p>
+              <p class="item-title">
+                <a href="/2017/08/02/loader/" class="title">8.Webpack Loader之css-loader,row-loader,file-loader</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2017-08-02T01:08:49.000Z" itemprop="datePublished">2017-08-02</time>
+              </p>
+            </div>
+          </li>
+          
+      </ul>
+    </div>
+  </div>
+  
+
+    
+  </div>
+</section>
+
+  
+  
+<section class="main">
+  <div class="content">
+  <article id="post-ExtractTextWebpackPlugin" class="article article-type-post" itemscope itemprop="blogPost">
+    
+    <header class="article-header">
+      
+        
+  
+    <h1 class="article-title" itemprop="name">
+      7.Webpack插件ExtractTextWebpackPlugin
+    </h1>
+  
+
+      
+      <div class="article-meta">
+        <span class="article-date">
+    <i class="fa fa-calendar-check-o"></i>
+	<a href="/2017/08/01/ExtractTextWebpackPlugin/" class="article-date">
+	  <time datetime="2017-08-01T01:07:45.000Z" itemprop="datePublished">2017-08-01</time>
+	</a>
+</span>
+        
+  <span class="article-category">
+    <i class="fa fa-folder"></i>
+    <a class="article-category-link" href="/categories/Webpack-前端/">Webpack,前端</a>
+  </span>
+
+        
+  <span class="article-tag">
+    <i class="fa fa-tag"></i>
+	<a class="article-tag-link" href="/tags/Webpack/">Webpack</a>
+  </span>
+
+
+        
+	<span class="article-read hidden-xs">
+	    <i class="fa fa-eye" aria-hidden="true"></i>
+	    <span id="busuanzi_container_page_pv">
+			阅读<span id="busuanzi_value_page_pv">0</span>次
+		</span>
+	</span>
+
+
+        <span class="post-comment"><i class="fa fa-commenting-o"></i> <a href="/2017/08/01/ExtractTextWebpackPlugin/#comments" class="article-comment-link">评论</a></span>
+        
+	
+		<span class="post-wordcount hidden-xs">字数统计: 556(字)</span>
+	
+	
+		<span class="post-readcount hidden-xs">阅读时长: 3(分)</span>
+	
+
+      </div>
+      
+    </header>
+    <div class="article-entry markdown-body" itemprop="articleBody">
+      
+        <p>它会将所有的入口 chunk(entry chunks)中引用的 *.css，移动到独立分离的 CSS 文件。因此，你的样式将不再内嵌到 JS bundle 中，而是会放到一个单独的 CSS 文件（即 styles.css）当中。 如果你的样式文件大小较大，这会做更快提前加载，因为 CSS bundle 会跟 JS bundle 并行加载。</p>
+<h2 id="1-安装"><a href="#1-安装" class="headerlink" title="1.安装"></a>1.安装</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"># 对于 webpack 3</div><div class="line">npm install --save-dev extract-text-webpack-plugin</div></pre></td></tr></table></figure>
+<h2 id="2-用法"><a href="#2-用法" class="headerlink" title="2.用法"></a>2.用法</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//webpack.config.js头部引入</span></div><div class="line"><span class="keyword">var</span> ExtractTextPlugin = <span class="built_in">require</span>(<span class="string">"extract-text-webpack-plugin"</span>);</div><div class="line"></div><div class="line"><span class="built_in">module</span>.exports = &#123;</div><div class="line">  <span class="built_in">module</span>: &#123;</div><div class="line">    rules: [</div><div class="line">      &#123;</div><div class="line">        test: <span class="regexp">/\.css$/</span>,</div><div class="line">        use: ExtractTextPlugin.extract(&#123;</div><div class="line">          fallback: <span class="string">"style-loader"</span>,</div><div class="line">          use: <span class="string">"css-loader"</span></div><div class="line">        &#125;)</div><div class="line">      &#125;</div><div class="line">    ]</div><div class="line">  &#125;,</div><div class="line">  plugins: [</div><div class="line">    <span class="keyword">new</span> ExtractTextPlugin(<span class="string">"styles.css"</span>),</div><div class="line">  ]</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="3-修改文件名"><a href="#3-修改文件名" class="headerlink" title="3.修改文件名"></a>3.修改文件名</h2><p><code>filename</code> 参数可以是 <code>Function</code>。它通过 <code>getPath</code> 来处理格式，如 <code>css/[name].css</code>，并返回真实的文件名，你可以用 <code>css</code> 替换 <code>css/js</code>，你会得到新的路径 <code>css/a.css</code>。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line">entry: &#123;</div><div class="line">		app:[</div><div class="line">			<span class="string">'./src/main.js'</span>,</div><div class="line">			<span class="string">'./src/main.scss'</span>,</div><div class="line">		]</div><div class="line"></div><div class="line">	&#125;,</div><div class="line">	output: &#123;</div><div class="line">		path:  path.resolve(__dirname,<span class="string">'./dist'</span>),</div><div class="line">		filename: <span class="string">'[name].js'</span></div><div class="line">	&#125;,</div><div class="line">	<span class="built_in">module</span>:&#123;</div><div class="line">		rules:[</div><div class="line">			&#123;</div><div class="line">				test:<span class="regexp">/\.s[ac]ss$/</span>,</div><div class="line">				use:ExtractTextPlugin.extract(&#123;</div><div class="line">					use:[<span class="string">'css-loader'</span>,<span class="string">'sass-loader'</span>],</div><div class="line">					fallback:<span class="string">'style-loader'</span>,</div><div class="line">					&#125;),</div><div class="line">			&#125;,</div><div class="line">		]</div><div class="line">	&#125;,</div><div class="line">	plugins: [</div><div class="line">		<span class="keyword">new</span> ExtractTextPlugin(<span class="string">'[name].css'</span>),</div><div class="line">		</div><div class="line">	]</div><div class="line">	</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+<h2 id="4-LoaderOptionsPlugin"><a href="#4-LoaderOptionsPlugin" class="headerlink" title="4.LoaderOptionsPlugin"></a>4.LoaderOptionsPlugin</h2><p>loader-options-plugin 和其他插件不同，它用于将 webpack 1 迁移至 webpack 2。在 webpack 2 中，对 webpack.config.js 的结构要求变得更加严格；不再开放扩展给其他的 loader/插件。webpack 2 推荐的使用方式是直接传递 options 给 loader/插件（换句话说，配置选项将不是全局/共享的）。</p>
+<p>不过，在某个 loader 升级为依靠直接传递给它的配置选项运行之前，可以使用 loader-options-plugin 来抹平差异。你可以通过这个插件配置全局/共享的 loader 配置，使所有的 loader 都能收到这些配置。</p>
+<p>简单说就是格式转化转换成webpack能适配的代码格式（目前只是自己的理解）</p>
+<p>用法直接在<code>plugins</code>数组中加入</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">new</span> webpack.LoaderOptionsPlugin(&#123;</div><div class="line">      minimize: <span class="literal">true</span>,</div><div class="line">    &#125;)</div></pre></td></tr></table></figure>
+<h2 id="5-本节webpack-config-js源代码如下"><a href="#5-本节webpack-config-js源代码如下" class="headerlink" title="5.本节webpack.config.js源代码如下"></a>5.本节<code>webpack.config.js</code>源代码如下</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> webpack = <span class="built_in">require</span>(<span class="string">'webpack'</span>);</div><div class="line"><span class="keyword">var</span> path = <span class="built_in">require</span>(<span class="string">'path'</span>);</div><div class="line"><span class="keyword">var</span> ExtractTextPlugin = <span class="built_in">require</span>(<span class="string">"extract-text-webpack-plugin"</span>);</div><div class="line"><span class="keyword">var</span> inProduction = (process.env.NODE_ENV == <span class="string">'production'</span>);</div><div class="line"></div><div class="line"><span class="built_in">module</span>.exports = &#123;</div><div class="line">	entry: &#123;</div><div class="line">		app:[</div><div class="line">			<span class="string">'./src/main.js'</span>,</div><div class="line">			<span class="string">'./src/main.scss'</span></div><div class="line">		]</div><div class="line"></div><div class="line">	&#125;,</div><div class="line">	output: &#123;</div><div class="line">		path:  path.resolve(__dirname,<span class="string">'./dist'</span>),</div><div class="line">		filename: <span class="string">'[name].js'</span></div><div class="line">	&#125;,</div><div class="line">	<span class="built_in">module</span>:&#123;</div><div class="line">		rules:[</div><div class="line">			&#123;</div><div class="line">				test:<span class="regexp">/\.s[ac]ss$/</span>,</div><div class="line">				use:ExtractTextPlugin.extract(&#123;</div><div class="line">					use:[<span class="string">'css-loader'</span>,<span class="string">'sass-loader'</span>],</div><div class="line">					fallback:<span class="string">'style-loader'</span>,</div><div class="line">					&#125;),</div><div class="line">			&#125;,</div><div class="line">		]</div><div class="line">	&#125;,</div><div class="line">	plugins: [</div><div class="line">		<span class="keyword">new</span> ExtractTextPlugin(<span class="string">'[name].css'</span>),</div><div class="line">		<span class="keyword">new</span> webpack.LoaderOptionsPlugin(&#123;</div><div class="line">			  minimize: inProduction,</div><div class="line">			&#125;)</div><div class="line">	]</div><div class="line">	</div><div class="line">&#125;;</div><div class="line"><span class="keyword">if</span> (inProduction) </div><div class="line">&#123;</div><div class="line">	<span class="built_in">module</span>.exports.plugins.push(</div><div class="line">		<span class="keyword">new</span> webpack.optimize.UglifyJsPlugin()</div><div class="line">		);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="6-最后"><a href="#6-最后" class="headerlink" title="6.最后"></a>6.最后</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">npm run dev //代码未压缩</div><div class="line">npm run production  //代码已压缩</div></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <blockquote>
+  <ul class="post-copyright list-unstyled">
+    
+    <li class="post-copyright-link hidden-xs">
+      <strong>本文链接：</strong>
+      <a href="http://blog.warcello.cn/2017/08/01/ExtractTextWebpackPlugin/" title="7.Webpack插件ExtractTextWebpackPlugin" target="_blank" rel="external">http://blog.warcello.cn/2017/08/01/ExtractTextWebpackPlugin/</a>
+    </li>
+    
+    <li class="post-copyright-license">
+      <strong>版权声明： </strong> 本博客所有文章除特别声明外，均采用 <a href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="external">CC BY 4.0 CN协议</a> 许可协议。转载请注明出处！
+    </li>
+  </ul>
+</blockquote>
+
+
+<div class="panel panel-default panel-badger">
+  <div class="panel-body">
+    <figure class="media">
+      <div class="media-left">
+        <a href="https://github.com/zhangshaocong" target="_blank" class="img-burn thumb-sm visible-lg">
+          <img src="/images/avatar.png" class="img-rounded w-full" alt="">
+        </a>
+      </div>
+      <div class="media-body">
+        <h3 class="media-heading"><a href="https://github.com/zhangshaocong" target="_blank"><span class="text-dark">Warcello</span><small class="ml-1x">PHP工程师 &amp; 全栈开发</small></a></h3>
+        <div>一个在php中摸爬滚打的小强,爱折腾。</div>
+      </div>
+    </figure>
+  </div>
+</div>
+
+
+    </footer>
+  </article>
+  
+    
+  <div id="comments"></div>
+
+
+  
+</div>
+
+  <nav class="bar bar-footer clearfix" data-stick-bottom>
+  <div class="bar-inner">
+  
+  <ul class="pager pull-left">
+    
+    <li class="prev">
+      <a href="/2017/08/02/loader/" title="8.Webpack Loader之css-loader,row-loader,file-loader"><i class="fa fa-angle-left" aria-hidden="true"></i>&nbsp;&nbsp;上一篇</a>
+    </li>
+    
+    
+    <li class="next">
+      <a href="/2017/07/29/webpacksassloader/" title="6.Webpack插件之sass-loader">下一篇&nbsp;&nbsp;<i class="fa fa-angle-right" aria-hidden="true"></i></a>
+    </li>
+    
+  </ul>
+  
+  
+  <!-- Button trigger modal -->
+  <button type="button" class="btn btn-fancy btn-donate pop-onhover bg-gradient-warning" data-toggle="modal" data-target="#donateModal"><span>赏</span></button>
+  
+  
+  <div class="bar-right">
+    <div class="share-component" data-sites="weibo,qq,wechat,facebook,twitter" data-mobile-sites="weibo,qq,qzone"></div>
+  </div>
+  
+  </div>
+</nav>
+  
+<!-- Modal -->
+<div class="modal modal-center modal-xs-full fade" id="donateModal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      <div class="modal-body">
+        <div class="donate-box">
+          <div class="donate-tit">
+            <p>感谢您的支持，我会继续努力的!</p>
+          </div>
+          <div class="donate-payimg">
+            <img src="/images/donate/alipayimg.png" alt="扫码支持" title="扫一扫" />
+          </div>
+          <p class="text-muted mv">扫码打赏，你说多少就多少</p>
+          <div class="donate-payselect">
+            <div class="pay_item checked" data-id="alipay" data-src="/images/donate/alipayimg.png">
+              <div class="radio">
+                <input type="radio" name="payment" id="input-alipay" value="alipay" checked>
+                <label class="pay_logo clickable" for="input-alipay"><img src="/images/donate/alipay.jpg" alt="支付宝" /></label>
+              </div>
+            </div>
+            <div class="pay_item" data-id="weipay" data-src="/images/donate/weipayimg.png">
+              <div class="radio">
+                <input type="radio" name="payment" id="input-weipay" value="weipay">
+                <label class="pay_logo clickable" for="input-weipay"><img src="/images/donate/weipay.jpg" alt="微信支付" /></label>
+              </div>
+            </div>
+          </div>
+          <div class="text-grey">
+            <p>打开<span id="donate-pay_txt">支付宝</span>扫一扫，即可进行扫码打赏哦</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+</section>
+
+  <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+<script>
+window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
+</script>
+<script src="/js/plugin.js"></script>
+<script src="/js/application.js"></script>
+
+
+
+  <script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+            UNTITLED: '(未命名)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+
+  <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+var gitment = new Gitment({
+  // id默认为当前页面url，如果url后带参数或锚点，gitment要重新初始化
+  // https://github.com/imsun/gitment/issues/55
+  // 解决方案：id:window.location.pathname,或者将id设置为当前页面标题
+  id: '7.Webpack插件ExtractTextWebpackPlugin', 
+  owner: '', // 可以是你的GitHub用户名，也可以是github id
+  repo: '',
+  oauth: {
+    client_id: '',
+    client_secret: '',
+  }
+})
+gitment.render('comments')
+</script>
+
+
+
+  
+<script defer src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+    
+    
+    
+
+
+</body>
+</html>

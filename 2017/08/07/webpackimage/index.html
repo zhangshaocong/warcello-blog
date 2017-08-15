@@ -15,18 +15,19 @@
   <!-- 强制页面在当前窗口以独立页面显示,防止别人在框架里调用页面 -->
   <meta http-equiv="window-target" content="_top" />
   
-  <title>Hello World | Hexo</title>
-  <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+  <title>12.Webpack img-loader | Warcello</title>
+  <meta name="description" content="图片压缩 安装1$ npm install img-loader --save-dev 使用1234567891011module: &amp;#123;  rules: [    &amp;#123;      test: /\.(jpe?g|png|gif|svg)$/i,      use: [        &amp;apos;url-loader?limit=10000&amp;apos;,        &amp;apos">
+<meta name="keywords" content="Webpack">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="http://blog.warcello.cn/2017/08/15/hello-world/index.html">
+<meta property="og:title" content="12.Webpack img-loader">
+<meta property="og:url" content="http://blog.warcello.cn/2017/08/07/webpackimage/index.html">
 <meta property="og:site_name" content="Warcello博客">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta property="og:description" content="图片压缩 安装1$ npm install img-loader --save-dev 使用1234567891011module: &amp;#123;  rules: [    &amp;#123;      test: /\.(jpe?g|png|gif|svg)$/i,      use: [        &amp;apos;url-loader?limit=10000&amp;apos;,        &amp;apos">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2017-08-15T00:19:47.000Z">
+<meta property="og:updated_time" content="2017-08-15T01:14:14.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hello World">
-<meta name="twitter:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta name="twitter:title" content="12.Webpack img-loader">
+<meta name="twitter:description" content="图片压缩 安装1$ npm install img-loader --save-dev 使用1234567891011module: &amp;#123;  rules: [    &amp;#123;      test: /\.(jpe?g|png|gif|svg)$/i,      use: [        &amp;apos;url-loader?limit=10000&amp;apos;,        &amp;apos">
   
     <link rel="alternate" href="/atom.xml" title="Warcello博客" type="application/atom+xml">
   
@@ -53,12 +54,12 @@
       
       
       <div class="profile-block text-center">
-        <a id="avatar" href="https://github.com/cofess" target="_blank">
-          <img class="thumb-xl img-circle img-rotate" src="/images/avatar.jpg" width="200" height="200">
+        <a id="avatar" href="https://github.com/zhangshaocong" target="_blank">
+          <img class="thumb-xl img-circle img-rotate" src="/images/avatar.png" width="200" height="200">
         </a>
-        <h2 id="name" class="hidden-xs hidden-sm">昵称</h2>
-        <h3 id="title" class="hidden-xs hidden-sm hidden-md">Web Developer &amp; Designer</h3>
-        <small id="location" class="text-muted hidden-xs hidden-sm"><i class="fa fa-map-marker"></i> Shenzhen, China</small>
+        <h2 id="name" class="hidden-xs hidden-sm">Warcello</h2>
+        <h3 id="title" class="hidden-xs hidden-sm hidden-md">PHP工程师 &amp; 全栈开发</h3>
+        <small id="location" class="text-muted hidden-xs hidden-sm"><i class="fa fa-map-marker"></i> 北京, 朝阳</small>
       </div>
       
       <div class="search" id="search-form-wrap">
@@ -98,7 +99,7 @@
         
         
         <li class="menu-item menu-item-home">
-          <a href="/.">
+          <a href="/">
             
             <i class="fa fa-fw fa-dashboard"></i>
             
@@ -147,16 +148,6 @@
         </li>
         
         
-        <li class="menu-item menu-item-books">
-          <a href="/books">
-            
-            <i class="fa fa-fw fa-leanpub"></i>
-            
-            <span class="menu-title">书单</span>
-          </a>
-        </li>
-        
-        
         <li class="menu-item menu-item-links">
           <a href="/links">
             
@@ -182,13 +173,9 @@
 	
     <ul class="social-links">
     	
-        <li><a href="https://github.com/cofess" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="fa fa-github"></i></a></li>
+        <li><a href="https://github.com/zhangshaocong" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="fa fa-github"></i></a></li>
         
-        <li><a href="http://weibo.com/cofess" target="_blank" title="Weibo" data-toggle=tooltip data-placement=top><i class="fa fa-weibo"></i></a></li>
-        
-        <li><a href="https://twitter.com/iwebued" target="_blank" title="Twitter" data-toggle=tooltip data-placement=top><i class="fa fa-twitter"></i></a></li>
-        
-        <li><a href="https://www.behance.net/cofess" target="_blank" title="Behance" data-toggle=tooltip data-placement=top><i class="fa fa-behance"></i></a></li>
+        <li><a href="https://github.com/zhangshaocong" target="_blank" title="Behance" data-toggle=tooltip data-placement=top><i class="fa fa-behance"></i></a></li>
         
         <li><a href="/atom.xml" target="_blank" title="Rss" data-toggle=tooltip data-placement=top><i class="fa fa-rss"></i></a></li>
         
@@ -226,18 +213,39 @@
 
     
       
+  <div class="widget">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget-body">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Webpack-前端/">Webpack,前端</a><span class="category-list-count">12</span></li></ul>
+    </div>
+  </div>
+
 
     
       
+  <div class="widget">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget-body">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Webpack/">Webpack</a><span class="tag-list-count">12</span></li></ul>
+    </div>
+  </div>
+
 
     
       
+  <div class="widget">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget-body tagcloud">
+      <a href="/tags/Webpack/" style="font-size: 13px;">Webpack</a>
+    </div>
+  </div>
+
     
       
   <div class="widget">
     <h3 class="widget-title">归档</h3>
     <div class="widget-body">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">八月 2017</a><span class="archive-list-count">1</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">八月 2017</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">七月 2017</a><span class="archive-list-count">6</span></li></ul>
     </div>
   </div>
 
@@ -253,13 +261,73 @@
             
             <div class="item-inner">
               <p class="item-category">
-                
+                <a class="category-link" href="/categories/Webpack-前端/">Webpack,前端</a>
               </p>
               <p class="item-title">
-                <a href="/2017/08/15/hello-world/" class="title">Hello World</a>
+                <a href="/2017/08/07/webpackimage/" class="title">12.Webpack img-loader</a>
               </p>
               <p class="item-date">
-                <time datetime="2017-08-15T00:19:47.000Z" itemprop="datePublished">2017-08-15</time>
+                <time datetime="2017-08-07T01:13:28.000Z" itemprop="datePublished">2017-08-07</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/Webpack-前端/">Webpack,前端</a>
+              </p>
+              <p class="item-title">
+                <a href="/2017/08/06/Manifests/" class="title">11.Webpack Manifests</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2017-08-06T01:10:22.000Z" itemprop="datePublished">2017-08-06</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/Webpack-前端/">Webpack,前端</a>
+              </p>
+              <p class="item-title">
+                <a href="/2017/08/04/cleanplugin/" class="title">10.clean-webpack-plugin</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2017-08-04T01:11:23.000Z" itemprop="datePublished">2017-08-04</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/Webpack-前端/">Webpack,前端</a>
+              </p>
+              <p class="item-title">
+                <a href="/2017/08/03/PurifyCSS/" class="title">9.Webpack Plugs PurifyCSS</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2017-08-03T01:10:09.000Z" itemprop="datePublished">2017-08-03</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/Webpack-前端/">Webpack,前端</a>
+              </p>
+              <p class="item-title">
+                <a href="/2017/08/02/loader/" class="title">8.Webpack Loader之css-loader,row-loader,file-loader</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2017-08-02T01:08:49.000Z" itemprop="datePublished">2017-08-02</time>
               </p>
             </div>
           </li>
@@ -277,14 +345,14 @@
   
 <section class="main">
   <div class="content">
-  <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
+  <article id="post-webpackimage" class="article article-type-post" itemscope itemprop="blogPost">
     
     <header class="article-header">
       
         
   
     <h1 class="article-title" itemprop="name">
-      Hello World
+      12.Webpack img-loader
     </h1>
   
 
@@ -292,12 +360,22 @@
       <div class="article-meta">
         <span class="article-date">
     <i class="fa fa-calendar-check-o"></i>
-	<a href="/2017/08/15/hello-world/" class="article-date">
-	  <time datetime="2017-08-15T00:19:47.000Z" itemprop="datePublished">2017-08-15</time>
+	<a href="/2017/08/07/webpackimage/" class="article-date">
+	  <time datetime="2017-08-07T01:13:28.000Z" itemprop="datePublished">2017-08-07</time>
 	</a>
 </span>
         
+  <span class="article-category">
+    <i class="fa fa-folder"></i>
+    <a class="article-category-link" href="/categories/Webpack-前端/">Webpack,前端</a>
+  </span>
+
         
+  <span class="article-tag">
+    <i class="fa fa-tag"></i>
+	<a class="article-tag-link" href="/tags/Webpack/">Webpack</a>
+  </span>
+
 
         
 	<span class="article-read hidden-xs">
@@ -308,10 +386,10 @@
 	</span>
 
 
-        <span class="post-comment"><i class="fa fa-commenting-o"></i> <a href="/2017/08/15/hello-world/#comments" class="article-comment-link">评论</a></span>
+        <span class="post-comment"><i class="fa fa-commenting-o"></i> <a href="/2017/08/07/webpackimage/#comments" class="article-comment-link">评论</a></span>
         
 	
-		<span class="post-wordcount hidden-xs">字数统计: 78(字)</span>
+		<span class="post-wordcount hidden-xs">字数统计: 32(字)</span>
 	
 	
 		<span class="post-readcount hidden-xs">阅读时长: 1(分)</span>
@@ -322,15 +400,9 @@
     </header>
     <div class="article-entry markdown-body" itemprop="articleBody">
       
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+        <p> 图片压缩</p>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ npm install img-loader --save-dev</div></pre></td></tr></table></figure>
+<h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">module: &#123;</div><div class="line">  rules: [</div><div class="line">    &#123;</div><div class="line">      test: /\.(jpe?g|png|gif|svg)$/i,</div><div class="line">      use: [</div><div class="line">        &apos;url-loader?limit=10000&apos;,</div><div class="line">        &apos;img-loader&apos;</div><div class="line">      ]</div><div class="line">    &#125;</div><div class="line">  ]</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 
       
     </div>
@@ -340,7 +412,7 @@
     
     <li class="post-copyright-link hidden-xs">
       <strong>本文链接：</strong>
-      <a href="http://blog.warcello.cn/2017/08/15/hello-world/" title="Hello World" target="_blank" rel="external">http://blog.warcello.cn/2017/08/15/hello-world/</a>
+      <a href="http://blog.warcello.cn/2017/08/07/webpackimage/" title="12.Webpack img-loader" target="_blank" rel="external">http://blog.warcello.cn/2017/08/07/webpackimage/</a>
     </li>
     
     <li class="post-copyright-license">
@@ -354,13 +426,13 @@
   <div class="panel-body">
     <figure class="media">
       <div class="media-left">
-        <a href="https://github.com/cofess" target="_blank" class="img-burn thumb-sm visible-lg">
-          <img src="/images/avatar.jpg" class="img-rounded w-full" alt="">
+        <a href="https://github.com/zhangshaocong" target="_blank" class="img-burn thumb-sm visible-lg">
+          <img src="/images/avatar.png" class="img-rounded w-full" alt="">
         </a>
       </div>
       <div class="media-body">
-        <h3 class="media-heading"><a href="https://github.com/cofess" target="_blank"><span class="text-dark">昵称</span><small class="ml-1x">Web Developer &amp; Designer</small></a></h3>
-        <div>个人简介。</div>
+        <h3 class="media-heading"><a href="https://github.com/zhangshaocong" target="_blank"><span class="text-dark">Warcello</span><small class="ml-1x">PHP工程师 &amp; 全栈开发</small></a></h3>
+        <div>一个在php中摸爬滚打的小强,爱折腾。</div>
       </div>
     </figure>
   </div>
@@ -379,6 +451,15 @@
 
   <nav class="bar bar-footer clearfix" data-stick-bottom>
   <div class="bar-inner">
+  
+  <ul class="pager pull-left">
+    
+    
+    <li class="next">
+      <a href="/2017/08/06/Manifests/" title="11.Webpack Manifests">下一篇&nbsp;&nbsp;<i class="fa fa-angle-right" aria-hidden="true"></i></a>
+    </li>
+    
+  </ul>
   
   
   <!-- Button trigger modal -->
@@ -467,7 +548,7 @@ var gitment = new Gitment({
   // id默认为当前页面url，如果url后带参数或锚点，gitment要重新初始化
   // https://github.com/imsun/gitment/issues/55
   // 解决方案：id:window.location.pathname,或者将id设置为当前页面标题
-  id: 'Hello World', 
+  id: '12.Webpack img-loader', 
   owner: '', // 可以是你的GitHub用户名，也可以是github id
   repo: '',
   oauth: {

@@ -15,14 +15,19 @@
   <!-- 强制页面在当前窗口以独立页面显示,防止别人在框架里调用页面 -->
   <meta http-equiv="window-target" content="_top" />
   
-  <title>Warcello</title>
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Warcello博客">
-<meta property="og:url" content="http://blog.warcello.cn/index.html">
+  <title>1.webpack 简介 | Warcello</title>
+  <meta name="description" content="什么是webpack Webpack 是一个模块打包器。它将根据模块的依赖关系进行静态分析，然后将这些模块按照指定的规则生成对应的静态资源     特点 Webpack 和其他模块化工具有什么区别呢？ 代码拆分Webpack 有两种组织模块依赖的方式，同步和异步。异步依赖作为分割点，形成一个新的块。在优化了依赖树后，每一个异步区块都作为一个文件被打包 LoaderWebpack 本身只能处理原生的">
+<meta name="keywords" content="Webpack">
+<meta property="og:type" content="article">
+<meta property="og:title" content="1.webpack 简介">
+<meta property="og:url" content="http://blog.warcello.cn/2017/07/24/Webpackage/index.html">
 <meta property="og:site_name" content="Warcello博客">
+<meta property="og:description" content="什么是webpack Webpack 是一个模块打包器。它将根据模块的依赖关系进行静态分析，然后将这些模块按照指定的规则生成对应的静态资源     特点 Webpack 和其他模块化工具有什么区别呢？ 代码拆分Webpack 有两种组织模块依赖的方式，同步和异步。异步依赖作为分割点，形成一个新的块。在优化了依赖树后，每一个异步区块都作为一个文件被打包 LoaderWebpack 本身只能处理原生的">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2017-08-15T01:00:47.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Warcello博客">
+<meta name="twitter:title" content="1.webpack 简介">
+<meta name="twitter:description" content="什么是webpack Webpack 是一个模块打包器。它将根据模块的依赖关系进行静态分析，然后将这些模块按照指定的规则生成对应的静态资源     特点 Webpack 和其他模块化工具有什么区别呢？ 代码拆分Webpack 有两种组织模块依赖的方式，同步和异步。异步依赖作为分割点，形成一个新的块。在优化了依赖树后，每一个异步区块都作为一个文件被打包 LoaderWebpack 本身只能处理原生的">
   
     <link rel="alternate" href="/atom.xml" title="Warcello博客" type="application/atom+xml">
   
@@ -31,6 +36,8 @@
   
   <!-- font-awesome CSS -->
   <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  
+  <link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
   
   <link rel="stylesheet" href="/css/style.css">
      
@@ -335,479 +342,182 @@
 </section>
 
   
-  <section class="main">
   
-  <div class="content article-list">
+<section class="main">
+  <div class="content">
+  <article id="post-Webpackage" class="article article-type-post" itemscope itemprop="blogPost">
     
-      <article class="article article-type-post">
-  <header class="article-header">
-    
+    <header class="article-header">
+      
+        
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/08/07/webpackimage/">12.Webpack img-loader</a>
+    <h1 class="article-title" itemprop="name">
+      1.webpack 简介
     </h1>
   
 
-  </header>
-  
-  <p class="article-meta">
-    <span class="article-date">
+      
+      <div class="article-meta">
+        <span class="article-date">
     <i class="fa fa-calendar-check-o"></i>
-	<a href="/2017/08/07/webpackimage/" class="article-date">
-	  <time datetime="2017-08-07T01:13:28.000Z" itemprop="datePublished">8月 7</time>
+	<a href="/2017/07/24/Webpackage/" class="article-date">
+	  <time datetime="2017-07-24T00:55:38.000Z" itemprop="datePublished">2017-07-24</time>
 	</a>
 </span>
-    
+        
   <span class="article-category">
     <i class="fa fa-folder"></i>
     <a class="article-category-link" href="/categories/Webpack-前端/">Webpack,前端</a>
   </span>
 
-    
+        
   <span class="article-tag">
     <i class="fa fa-tag"></i>
 	<a class="article-tag-link" href="/tags/Webpack/">Webpack</a>
   </span>
 
 
-    <span class="post-comment"><i class="fa fa-commenting-o"></i> <a href="/2017/08/07/webpackimage/#comments" class="article-comment-link">评论</a></span>
-    
+        
+	<span class="article-read hidden-xs">
+	    <i class="fa fa-eye" aria-hidden="true"></i>
+	    <span id="busuanzi_container_page_pv">
+			阅读<span id="busuanzi_value_page_pv">0</span>次
+		</span>
+	</span>
+
+
+        <span class="post-comment"><i class="fa fa-commenting-o"></i> <a href="/2017/07/24/Webpackage/#comments" class="article-comment-link">评论</a></span>
+        
 	
-		<span class="post-wordcount hidden-xs">字数统计: 32(字)</span>
+		<span class="post-wordcount hidden-xs">字数统计: 362(字)</span>
 	
 	
 		<span class="post-readcount hidden-xs">阅读时长: 1(分)</span>
 	
 
-  </p>
-</article>
+      </div>
+      
+    </header>
+    <div class="article-entry markdown-body" itemprop="articleBody">
+      
+        <h2 id="什么是webpack"><a href="#什么是webpack" class="headerlink" title="什么是webpack"></a>什么是webpack</h2><p> Webpack 是一个模块打包器。它将根据模块的依赖关系进行静态分析，然后将这些模块按照指定的规则生成对应的静态资源    </p>
+<h2 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h2><blockquote>
+<p>Webpack 和其他模块化工具有什么区别呢？</p>
+<h3 id="代码拆分"><a href="#代码拆分" class="headerlink" title="代码拆分"></a>代码拆分</h3><p>Webpack 有两种组织模块依赖的方式，同步和异步。异步依赖作为分割点，形成一个新的块。在优化了依赖树后，每一个异步区块都作为一个文件被打包</p>
+<h3 id="Loader"><a href="#Loader" class="headerlink" title="Loader"></a>Loader</h3><p>Webpack 本身只能处理原生的 JavaScript 模块，但是 loader 转换器可以将各种类型的资源转换成 JavaScript 模块。这样，任何资源都可以成为 Webpack 可以处理的模块。</p>
+<h3 id="智能解析"><a href="#智能解析" class="headerlink" title="智能解析"></a>智能解析</h3><p>Webpack 有一个智能解析器，几乎可以处理任何第三方库，无论它们的模块形式是 CommonJS、 AMD 还是普通的 JS 文件。甚至在加载依赖的时候，允许使用动态表达式 require(“./templates/“ + name + “.jade”)</p>
+<h3 id="插件系统"><a href="#插件系统" class="headerlink" title="插件系统"></a>插件系统</h3><p>Webpack 还有一个功能丰富的插件系统。大多数内容功能都是基于这个插件系统运行的，还可以开发和使用开源的 Webpack 插件，来满足各式各样的需求。</p>
+<h3 id="快速运行"><a href="#快速运行" class="headerlink" title="快速运行"></a>快速运行</h3><p>Webpack 使用异步 I/O 和多级缓存提高运行效率，这使得 Webpack 能够以令人难以置信的速度快速增量编译</p>
+</blockquote>
 
+      
+    </div>
+    <footer class="article-footer">
+      <blockquote>
+  <ul class="post-copyright list-unstyled">
     
-      <article class="article article-type-post">
-  <header class="article-header">
+    <li class="post-copyright-link hidden-xs">
+      <strong>本文链接：</strong>
+      <a href="http://blog.warcello.cn/2017/07/24/Webpackage/" title="1.webpack 简介" target="_blank" rel="external">http://blog.warcello.cn/2017/07/24/Webpackage/</a>
+    </li>
     
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/08/06/Manifests/">11.Webpack Manifests</a>
-    </h1>
-  
-
-  </header>
-  
-  <p class="article-meta">
-    <span class="article-date">
-    <i class="fa fa-calendar-check-o"></i>
-	<a href="/2017/08/06/Manifests/" class="article-date">
-	  <time datetime="2017-08-06T01:10:22.000Z" itemprop="datePublished">8月 6</time>
-	</a>
-</span>
-    
-  <span class="article-category">
-    <i class="fa fa-folder"></i>
-    <a class="article-category-link" href="/categories/Webpack-前端/">Webpack,前端</a>
-  </span>
-
-    
-  <span class="article-tag">
-    <i class="fa fa-tag"></i>
-	<a class="article-tag-link" href="/tags/Webpack/">Webpack</a>
-  </span>
+    <li class="post-copyright-license">
+      <strong>版权声明： </strong> 本博客所有文章除特别声明外，均采用 <a href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="external">CC BY 4.0 CN协议</a> 许可协议。转载请注明出处！
+    </li>
+  </ul>
+</blockquote>
 
 
-    <span class="post-comment"><i class="fa fa-commenting-o"></i> <a href="/2017/08/06/Manifests/#comments" class="article-comment-link">评论</a></span>
-    
-	
-		<span class="post-wordcount hidden-xs">字数统计: 127(字)</span>
-	
-	
-		<span class="post-readcount hidden-xs">阅读时长: 1(分)</span>
-	
-
-  </p>
-</article>
-
-    
-      <article class="article article-type-post">
-  <header class="article-header">
-    
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/08/04/cleanplugin/">10.clean-webpack-plugin</a>
-    </h1>
-  
-
-  </header>
-  
-  <p class="article-meta">
-    <span class="article-date">
-    <i class="fa fa-calendar-check-o"></i>
-	<a href="/2017/08/04/cleanplugin/" class="article-date">
-	  <time datetime="2017-08-04T01:11:23.000Z" itemprop="datePublished">8月 4</time>
-	</a>
-</span>
-    
-  <span class="article-category">
-    <i class="fa fa-folder"></i>
-    <a class="article-category-link" href="/categories/Webpack-前端/">Webpack,前端</a>
-  </span>
-
-    
-  <span class="article-tag">
-    <i class="fa fa-tag"></i>
-	<a class="article-tag-link" href="/tags/Webpack/">Webpack</a>
-  </span>
-
-
-    <span class="post-comment"><i class="fa fa-commenting-o"></i> <a href="/2017/08/04/cleanplugin/#comments" class="article-comment-link">评论</a></span>
-    
-	
-		<span class="post-wordcount hidden-xs">字数统计: 131(字)</span>
-	
-	
-		<span class="post-readcount hidden-xs">阅读时长: 1(分)</span>
-	
-
-  </p>
-</article>
-
-    
-      <article class="article article-type-post">
-  <header class="article-header">
-    
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/08/03/PurifyCSS/">9.Webpack Plugs PurifyCSS</a>
-    </h1>
-  
-
-  </header>
-  
-  <p class="article-meta">
-    <span class="article-date">
-    <i class="fa fa-calendar-check-o"></i>
-	<a href="/2017/08/03/PurifyCSS/" class="article-date">
-	  <time datetime="2017-08-03T01:10:09.000Z" itemprop="datePublished">8月 3</time>
-	</a>
-</span>
-    
-  <span class="article-category">
-    <i class="fa fa-folder"></i>
-    <a class="article-category-link" href="/categories/Webpack-前端/">Webpack,前端</a>
-  </span>
-
-    
-  <span class="article-tag">
-    <i class="fa fa-tag"></i>
-	<a class="article-tag-link" href="/tags/Webpack/">Webpack</a>
-  </span>
-
-
-    <span class="post-comment"><i class="fa fa-commenting-o"></i> <a href="/2017/08/03/PurifyCSS/#comments" class="article-comment-link">评论</a></span>
-    
-	
-		<span class="post-wordcount hidden-xs">字数统计: 173(字)</span>
-	
-	
-		<span class="post-readcount hidden-xs">阅读时长: 1(分)</span>
-	
-
-  </p>
-</article>
-
-    
-      <article class="article article-type-post">
-  <header class="article-header">
-    
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/08/02/loader/">8.Webpack Loader之css-loader,row-loader,file-loader</a>
-    </h1>
-  
-
-  </header>
-  
-  <p class="article-meta">
-    <span class="article-date">
-    <i class="fa fa-calendar-check-o"></i>
-	<a href="/2017/08/02/loader/" class="article-date">
-	  <time datetime="2017-08-02T01:08:49.000Z" itemprop="datePublished">8月 2</time>
-	</a>
-</span>
-    
-  <span class="article-category">
-    <i class="fa fa-folder"></i>
-    <a class="article-category-link" href="/categories/Webpack-前端/">Webpack,前端</a>
-  </span>
-
-    
-  <span class="article-tag">
-    <i class="fa fa-tag"></i>
-	<a class="article-tag-link" href="/tags/Webpack/">Webpack</a>
-  </span>
-
-
-    <span class="post-comment"><i class="fa fa-commenting-o"></i> <a href="/2017/08/02/loader/#comments" class="article-comment-link">评论</a></span>
-    
-	
-		<span class="post-wordcount hidden-xs">字数统计: 163(字)</span>
-	
-	
-		<span class="post-readcount hidden-xs">阅读时长: 1(分)</span>
-	
-
-  </p>
-</article>
-
-    
-      <article class="article article-type-post">
-  <header class="article-header">
-    
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/08/01/ExtractTextWebpackPlugin/">7.Webpack插件ExtractTextWebpackPlugin</a>
-    </h1>
-  
-
-  </header>
-  
-  <p class="article-meta">
-    <span class="article-date">
-    <i class="fa fa-calendar-check-o"></i>
-	<a href="/2017/08/01/ExtractTextWebpackPlugin/" class="article-date">
-	  <time datetime="2017-08-01T01:07:45.000Z" itemprop="datePublished">8月 1</time>
-	</a>
-</span>
-    
-  <span class="article-category">
-    <i class="fa fa-folder"></i>
-    <a class="article-category-link" href="/categories/Webpack-前端/">Webpack,前端</a>
-  </span>
-
-    
-  <span class="article-tag">
-    <i class="fa fa-tag"></i>
-	<a class="article-tag-link" href="/tags/Webpack/">Webpack</a>
-  </span>
-
-
-    <span class="post-comment"><i class="fa fa-commenting-o"></i> <a href="/2017/08/01/ExtractTextWebpackPlugin/#comments" class="article-comment-link">评论</a></span>
-    
-	
-		<span class="post-wordcount hidden-xs">字数统计: 556(字)</span>
-	
-	
-		<span class="post-readcount hidden-xs">阅读时长: 3(分)</span>
-	
-
-  </p>
-</article>
-
-    
-      <article class="article article-type-post">
-  <header class="article-header">
-    
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/07/29/webpacksassloader/">6.Webpack插件之sass-loader</a>
-    </h1>
-  
-
-  </header>
-  
-  <p class="article-meta">
-    <span class="article-date">
-    <i class="fa fa-calendar-check-o"></i>
-	<a href="/2017/07/29/webpacksassloader/" class="article-date">
-	  <time datetime="2017-07-29T01:05:14.000Z" itemprop="datePublished">7月 29</time>
-	</a>
-</span>
-    
-  <span class="article-category">
-    <i class="fa fa-folder"></i>
-    <a class="article-category-link" href="/categories/Webpack-前端/">Webpack,前端</a>
-  </span>
-
-    
-  <span class="article-tag">
-    <i class="fa fa-tag"></i>
-	<a class="article-tag-link" href="/tags/Webpack/">Webpack</a>
-  </span>
-
-
-    <span class="post-comment"><i class="fa fa-commenting-o"></i> <a href="/2017/07/29/webpacksassloader/#comments" class="article-comment-link">评论</a></span>
-    
-	
-		<span class="post-wordcount hidden-xs">字数统计: 84(字)</span>
-	
-	
-		<span class="post-readcount hidden-xs">阅读时长: 1(分)</span>
-	
-
-  </p>
-</article>
-
-    
-      <article class="article article-type-post">
-  <header class="article-header">
-    
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/07/28/webpackplugs/">5.Webpack 插件</a>
-    </h1>
-  
-
-  </header>
-  
-  <p class="article-meta">
-    <span class="article-date">
-    <i class="fa fa-calendar-check-o"></i>
-	<a href="/2017/07/28/webpackplugs/" class="article-date">
-	  <time datetime="2017-07-28T01:04:15.000Z" itemprop="datePublished">7月 28</time>
-	</a>
-</span>
-    
-  <span class="article-category">
-    <i class="fa fa-folder"></i>
-    <a class="article-category-link" href="/categories/Webpack-前端/">Webpack,前端</a>
-  </span>
-
-    
-  <span class="article-tag">
-    <i class="fa fa-tag"></i>
-	<a class="article-tag-link" href="/tags/Webpack/">Webpack</a>
-  </span>
-
-
-    <span class="post-comment"><i class="fa fa-commenting-o"></i> <a href="/2017/07/28/webpackplugs/#comments" class="article-comment-link">评论</a></span>
-    
-	
-		<span class="post-wordcount hidden-xs">字数统计: 223(字)</span>
-	
-	
-		<span class="post-readcount hidden-xs">阅读时长: 1(分)</span>
-	
-
-  </p>
-</article>
-
-    
-      <article class="article article-type-post">
-  <header class="article-header">
-    
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/07/27/webpackloader/">4.Webpack loader带代码转换</a>
-    </h1>
-  
-
-  </header>
-  
-  <p class="article-meta">
-    <span class="article-date">
-    <i class="fa fa-calendar-check-o"></i>
-	<a href="/2017/07/27/webpackloader/" class="article-date">
-	  <time datetime="2017-07-27T01:03:00.000Z" itemprop="datePublished">7月 27</time>
-	</a>
-</span>
-    
-  <span class="article-category">
-    <i class="fa fa-folder"></i>
-    <a class="article-category-link" href="/categories/Webpack-前端/">Webpack,前端</a>
-  </span>
-
-    
-  <span class="article-tag">
-    <i class="fa fa-tag"></i>
-	<a class="article-tag-link" href="/tags/Webpack/">Webpack</a>
-  </span>
-
-
-    <span class="post-comment"><i class="fa fa-commenting-o"></i> <a href="/2017/07/27/webpackloader/#comments" class="article-comment-link">评论</a></span>
-    
-	
-		<span class="post-wordcount hidden-xs">字数统计: 305(字)</span>
-	
-	
-		<span class="post-readcount hidden-xs">阅读时长: 1(分)</span>
-	
-
-  </p>
-</article>
-
-    
-      <article class="article article-type-post">
-  <header class="article-header">
-    
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/07/26/webpackConfig/">3.Webpack 配置文件</a>
-    </h1>
-  
-
-  </header>
-  
-  <p class="article-meta">
-    <span class="article-date">
-    <i class="fa fa-calendar-check-o"></i>
-	<a href="/2017/07/26/webpackConfig/" class="article-date">
-	  <time datetime="2017-07-26T01:01:41.000Z" itemprop="datePublished">7月 26</time>
-	</a>
-</span>
-    
-  <span class="article-category">
-    <i class="fa fa-folder"></i>
-    <a class="article-category-link" href="/categories/Webpack-前端/">Webpack,前端</a>
-  </span>
-
-    
-  <span class="article-tag">
-    <i class="fa fa-tag"></i>
-	<a class="article-tag-link" href="/tags/Webpack/">Webpack</a>
-  </span>
-
-
-    <span class="post-comment"><i class="fa fa-commenting-o"></i> <a href="/2017/07/26/webpackConfig/#comments" class="article-comment-link">评论</a></span>
-    
-	
-		<span class="post-wordcount hidden-xs">字数统计: 219(字)</span>
-	
-	
-		<span class="post-readcount hidden-xs">阅读时长: 1(分)</span>
-	
-
-  </p>
-</article>
-
-    
+<div class="panel panel-default panel-badger">
+  <div class="panel-body">
+    <figure class="media">
+      <div class="media-left">
+        <a href="https://github.com/zhangshaocong" target="_blank" class="img-burn thumb-sm visible-lg">
+          <img src="/images/avatar.png" class="img-rounded w-full" alt="">
+        </a>
+      </div>
+      <div class="media-body">
+        <h3 class="media-heading"><a href="https://github.com/zhangshaocong" target="_blank"><span class="text-dark">Warcello</span><small class="ml-1x">PHP工程师 &amp; 全栈开发</small></a></h3>
+        <div>一个在php中摸爬滚打的小强,爱折腾。</div>
+      </div>
+    </figure>
   </div>
+</div>
 
+
+    </footer>
+  </article>
   
     
-    <nav class="bar bar-footer clearfix" data-stick-bottom>
-        <div class="bar-inner">
-        <ul class="pager pull-left">
-            
-            <li class="prev disabled">
-                <a href="javascript:;">
-                    <i class="fa fa-angle-left"></i>
-                    上一页
-                </a>
-            </li>
-            
-            
-            <li class="next">
-                <a href="/page/2/">
-                    下一页
-                    <i class="fa fa-angle-right"></i>
-                </a>
-            </li>
-            
-        </ul>
-        <div class="total-article bar-right">Page 1 of 2</div>
-        </div>
-    </nav>
+  <div id="comments"></div>
+
+
+  
+</div>
+
+  <nav class="bar bar-footer clearfix" data-stick-bottom>
+  <div class="bar-inner">
+  
+  <ul class="pager pull-left">
     
- 
+    <li class="prev">
+      <a href="/2017/07/25/sayHello/" title="2.Webpack Hello World"><i class="fa fa-angle-left" aria-hidden="true"></i>&nbsp;&nbsp;上一篇</a>
+    </li>
+    
+    
+  </ul>
+  
+  
+  <!-- Button trigger modal -->
+  <button type="button" class="btn btn-fancy btn-donate pop-onhover bg-gradient-warning" data-toggle="modal" data-target="#donateModal"><span>赏</span></button>
+  
+  
+  <div class="bar-right">
+    <div class="share-component" data-sites="weibo,qq,wechat,facebook,twitter" data-mobile-sites="weibo,qq,qzone"></div>
+  </div>
+  
+  </div>
+</nav>
+  
+<!-- Modal -->
+<div class="modal modal-center modal-xs-full fade" id="donateModal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      <div class="modal-body">
+        <div class="donate-box">
+          <div class="donate-tit">
+            <p>感谢您的支持，我会继续努力的!</p>
+          </div>
+          <div class="donate-payimg">
+            <img src="/images/donate/alipayimg.png" alt="扫码支持" title="扫一扫" />
+          </div>
+          <p class="text-muted mv">扫码打赏，你说多少就多少</p>
+          <div class="donate-payselect">
+            <div class="pay_item checked" data-id="alipay" data-src="/images/donate/alipayimg.png">
+              <div class="radio">
+                <input type="radio" name="payment" id="input-alipay" value="alipay" checked>
+                <label class="pay_logo clickable" for="input-alipay"><img src="/images/donate/alipay.jpg" alt="支付宝" /></label>
+              </div>
+            </div>
+            <div class="pay_item" data-id="weipay" data-src="/images/donate/weipayimg.png">
+              <div class="radio">
+                <input type="radio" name="payment" id="input-weipay" value="weipay">
+                <label class="pay_logo clickable" for="input-weipay"><img src="/images/donate/weipay.jpg" alt="微信支付" /></label>
+              </div>
+            </div>
+          </div>
+          <div class="text-grey">
+            <p>打开<span id="donate-pay_txt">支付宝</span>扫一扫，即可进行扫码打赏哦</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
 </section>
 
   <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
@@ -836,6 +546,30 @@ window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
 })(window);
 </script>
 <script src="/js/insight.js"></script>
+
+
+  <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+var gitment = new Gitment({
+  // id默认为当前页面url，如果url后带参数或锚点，gitment要重新初始化
+  // https://github.com/imsun/gitment/issues/55
+  // 解决方案：id:window.location.pathname,或者将id设置为当前页面标题
+  id: '1.webpack 简介', 
+  owner: '', // 可以是你的GitHub用户名，也可以是github id
+  repo: '',
+  oauth: {
+    client_id: '',
+    client_secret: '',
+  }
+})
+gitment.render('comments')
+</script>
+
+
+
+  
+<script defer src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
 
 
 
