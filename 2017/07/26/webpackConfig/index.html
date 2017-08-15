@@ -556,7 +556,7 @@ var gitment = new Gitment({
   // id默认为当前页面url，如果url后带参数或锚点，gitment要重新初始化
   // https://github.com/imsun/gitment/issues/55
   // 解决方案：id:window.location.pathname,或者将id设置为当前页面标题
-  id: '3.Webpack 配置文件', 
+  id: window.location.pathname,
   owner: 'zhangshaocong', // 可以是你的GitHub用户名，也可以是github id
   repo: 'https://github.com/zhangshaocong/warcello-blog/issues/1',
   oauth: {
